@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Fellix";
+  src: url("/fonts/Fellix_Medium.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fellix";
+  src: url("/fonts/Fellix_SemiBold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("/fonts/HelveticaNowDisplay_Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/HelveticaNowText_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/HelveticaNowText_Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #12201f;
+  --ppc-mint: #f3f7f6;
+  --ppc-surface: #e8f1ef;
+  --ppc-accent: #1fa97a;
+  --ppc-accent-soft: #3bc48f;
+  --ppc-primary: #0b3d3a;
+  --ppc-border: #d5e3df;
+  --ppc-dark: #0a1f1e;
+  --font-display: "Fellix", "Helvetica Now Display", sans-serif;
+  --font-body: "Helvetica Now Text", "Fellix", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ppc-mint: var(--ppc-mint);
+  --color-ppc-surface: var(--ppc-surface);
+  --color-ppc-accent: var(--ppc-accent);
+  --color-ppc-accent-soft: var(--ppc-accent-soft);
+  --color-ppc-primary: var(--ppc-primary);
+  --color-ppc-border: var(--ppc-border);
+  --color-ppc-dark: var(--ppc-dark);
+  --font-sans: var(--font-body);
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-slow: marquee 45s linear infinite;
+  --animate-cursor-blink: cursor-blink 1s step-end infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(31, 169, 122, 0.35);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 8px rgba(31, 169, 122, 0);
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up {
+  transform: translateY(28px);
+}
+
+.reveal-fade-in {
+  transform: none;
+}
+
+.reveal-slide-left {
+  transform: translateX(-36px);
+}
+
+.reveal-slide-right {
+  transform: translateX(36px);
+}
+
+.reveal-scale-in {
+  transform: scale(0.94);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.animate-float-soft {
+  animation: float-soft 4s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
+
+.animate-check-pop {
+  animation: check-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-fade-up,
+  .reveal-fade-in,
+  .reveal-slide-left,
+  .reveal-slide-right,
+  .reveal-scale-in,
+  .animate-fade-up,
+  .animate-float-soft,
+  .animate-pulse-soft,
+  .animate-check-pop,
+  .animate-marquee,
+  .animate-marquee-slow {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-helvetica-display {
+  font-family: "Helvetica Now Display", var(--font-display), sans-serif;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-marquee {
+  animation: var(--animate-marquee);
+}
+
+.animate-marquee-slow {
+  animation: var(--animate-marquee-slow);
+}
+
+.animate-cursor-blink {
+  animation: var(--animate-cursor-blink);
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
