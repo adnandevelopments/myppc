@@ -7,40 +7,41 @@ import { media } from "@/lib/content";
 
 export default function BlogCTA() {
   return (
-    <section id="blog" className="w-full bg-ppc-mint">
-      <Reveal variant="fade-in">
-        <div className="relative w-full min-h-[360px] md:min-h-[480px] lg:min-h-[520px] overflow-hidden group">
-          <Image
-            src={media.blogBg}
-            alt="myPPC health notes"
-            fill
-            className="object-cover transition-transform duration-[1.2s] group-hover:scale-105"
-            sizes="100vw"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-ppc-dark/85 via-ppc-dark/55 to-ppc-dark/25" />
-          <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:px-12 lg:px-[8%] max-w-none">
-            <div className="max-w-[640px]">
-              <p className="text-ppc-accent-soft text-xs md:text-sm font-semibold uppercase tracking-wider mb-3">
+    <section id="blog" className="bg-background px-5 py-16 md:py-20">
+      <div className="mx-auto max-w-[1180px]">
+        <Reveal variant="scale-in">
+          <div className="group grid overflow-hidden rounded-2xl bg-ppc-dark md:grid-cols-[1.1fr_0.9fr]">
+            <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+              <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
                 Health notes
               </p>
-              <h2 className="font-display text-white text-[32px] md:text-[48px] lg:text-[56px] leading-[1.08] font-[400] mb-4">
-                Health notes worth reading
+              <h2 className="font-display text-[28px] font-[400] leading-[1.12] text-white md:text-[40px]">
+                Practical reading for clearer care decisions
               </h2>
-              <p className="text-white/90 text-[16px] md:text-[18px] mb-7 max-w-[520px]">
-                Practical articles on habits, treatment basics, and staying consistent.
+              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/65 md:text-[16px]">
+                Articles on habits, treatment basics, and staying consistent —
+                written for real life, not clinic jargon.
               </p>
               <Link
-                href="#"
-                className="inline-flex items-center gap-2 rounded-full bg-ppc-accent text-white px-6 py-3 text-[15px] font-medium hover:bg-ppc-accent-soft transition-all hover:scale-[1.02]"
+                href="/blog"
+                className="motion-press mt-7 inline-flex w-fit items-center gap-2 rounded-md bg-ppc-accent px-5 py-3 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
               >
                 Explore the journal
                 <span aria-hidden>→</span>
               </Link>
             </div>
+            <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
+              <Image
+                src={media.blogBg}
+                alt="myPPC health notes"
+                fill
+                className="motion-image object-cover"
+                sizes="(max-width: 768px) 100vw, 45vw"
+              />
+            </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

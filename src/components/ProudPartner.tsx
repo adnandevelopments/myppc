@@ -9,25 +9,24 @@ const partners = [
 
 export default function ProudPartner() {
   return (
-    <section className="px-5 py-10 md:py-14 bg-white">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+    <section className="border-y border-ppc-border bg-ppc-mint px-5 py-10 md:py-12">
+      <div className="mx-auto flex max-w-[1180px] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <div className="flex items-center gap-3">
           <BrandLogo />
-          <span className="leading-[140%] font-[600] text-[10px] uppercase tracking-wide text-black/60">
-            proud partner
+          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ppc-primary/45">
+            Network partners
           </span>
         </div>
-        <div className="hidden md:block self-stretch w-px bg-ppc-border mx-5 min-h-[40px]" />
-        <div className="flex items-center gap-4 md:gap-6 justify-center flex-wrap">
+        <div className="flex flex-wrap items-center gap-3">
           {partners.map((p) => (
             <div
               key={p.label}
-              className="flex items-center gap-2 rounded-full border border-ppc-border bg-ppc-mint px-3 py-2"
+              className="flex items-center gap-2 rounded-md border border-ppc-border bg-background px-3 py-2"
             >
-              <span className="w-8 h-8 rounded-full bg-ppc-accent text-white text-xs font-bold flex items-center justify-center">
+              <span className="flex h-7 w-7 items-center justify-center rounded bg-ppc-accent text-[10px] font-bold text-white">
                 {p.short}
               </span>
-              <span className="text-sm font-medium text-ppc-primary">{p.label}</span>
+              <span className="text-[13px] font-medium text-ppc-primary">{p.label}</span>
             </div>
           ))}
         </div>

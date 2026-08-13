@@ -5,11 +5,19 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  /** Animation variant */
-  variant?: "fade-up" | "fade-in" | "slide-left" | "slide-right" | "scale-in";
+  variant?:
+    | "fade-up"
+    | "fade-in"
+    | "slide-left"
+    | "slide-right"
+    | "scale-in"
+    | "blur-up"
+    | "rise"
+    | "image-in";
   /** Delay in ms */
   delay?: number;
-  /** Once visible, stay visible */
+  /** Duration in ms */
+  duration?: number;
   once?: boolean;
 };
 
@@ -18,7 +26,8 @@ export default function Reveal({
   className = "",
   variant = "fade-up",
   delay = 0,
-  once = true,
+  duration = 800,
+  once = false,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -36,7 +45,7 @@ export default function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(el);
@@ -47,7 +56,10 @@ export default function Reveal({
     <div
       ref={ref}
       className={`reveal reveal-${variant} ${visible ? "is-visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{
+        transitionDelay: `${delay}ms`,
+        transitionDuration: `${duration}ms`,
+      }}
     >
       {children}
     </div>

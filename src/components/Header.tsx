@@ -4,74 +4,53 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import BrandLogo from "@/components/BrandLogo";
+import { useCart } from "@/components/CartProvider";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { media, meds, treatments } from "@/lib/content";
 
-const popular = treatments.slice(0, 3).map((t) => ({
-  category: `${t.title} ${t.accent}`,
-  description: "Clinician-guided care with discreet fulfillment",
-  href: t.href,
-  image: t.image,
-}));
-
-const infoLinks = [
-  { label: "How care works", href: "#how-it-works" },
-  { label: "Common questions", href: "#faqs" },
-  { label: "Our clinicians", href: "#team" },
-  { label: "Health notes", href: "#blog" },
-  { label: "Patient stories", href: "#reviews" },
-  { label: "Contact", href: "#footer" },
+const supportLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Medications", href: "/medications" },
+  { label: "Weight loss", href: "/treatments/weight-loss" },
+  { label: "Body optimization", href: "/body-optimization" },
+  { label: "Hair loss", href: "/hairloss" },
+  { label: "Skincare", href: "/skincare" },
+  { label: "Longevity", href: "/longevity" },
+  { label: "Sexual health", href: "/sexual-health" },
+  { label: "Mental health", href: "/mental-health" },
+  { label: "How care works", href: "/how-it-works" },
+  { label: "Health notes", href: "/blog" },
+  { label: "FAQs", href: "/faqs" },
 ];
 
-const menuItemClass =
-  "group flex items-center justify-between px-4 md:px-6 py-4 md:py-5 rounded-2xl transition-all duration-300 hover:bg-[#E8F5F0] hover:text-ppc-primary";
+const featured = treatments.slice(0, 3);
 
-function HamburgerIcon() {
-  return (
-    <svg viewBox="0 0 512 512" height="24" width="24" fill="currentColor" aria-hidden>
-      <path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z" />
-    </svg>
-  );
-}
-
-function CloseIcon() {
-  return (
-    <svg viewBox="0 0 512 512" height="24" width="24" fill="currentColor" aria-hidden>
-      <path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z" />
-    </svg>
-  );
-}
-
-function CartIcon() {
-  return (
-    <svg viewBox="0 0 512 512" height="24" width="24" fill="currentColor" aria-hidden>
-      <ellipse cx="160" cy="424" rx="24" ry="24" />
-      <ellipse cx="384.5" cy="424" rx="24" ry="24" />
-      <path d="M463.8 132.2c-.7-2.4-2.8-4-5.2-4.2L132.9 96.5c-2.8-.3-6.2-2.1-7.5-4.7-3.8-7.1-6.2-11.1-12.2-18.6-7.7-9.4-22.2-9.1-48.8-9.3-9-.1-16.3 5.2-16.3 14.1 0 8.7 6.9 14.1 15.6 14.1s21.3.5 26 1.9c4.7 1.4 8.5 9.1 9.9 15.8l40 211.6c2.4 14.5 7.3 26.5 14.5 35.7 8.4 10.8 19.5 16.2 32.9 16.2h236.6c7.6 0 14.1-5.8 14.4-13.4.4-8-6-14.6-14-14.6H188.9c-2 0-4.9 0-8.3-2.8-3.5-3-8.3-9.9-11.5-26l-4.3-23.7c0-.3.1-.5.4-.6l277.7-47c2.6-.4 4.6-2.5 4.9-5.2l16-115.8c.2-.8.2-1.7 0-2.6z" />
-    </svg>
-  );
-}
+type MenuTab = "paths" | "meds" | "support";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [tab, setTab] = useState<"Care paths" | "Medications" | "Support">(
-    "Care paths",
-  );
+  const [tab, setTab] = useState<MenuTab>("paths");
+  const { count, setOpen: setCartOpen } = useCart();
 
   const closeMenu = () => {
     setVisible(false);
-    setTimeout(() => {
+    window.setTimeout(() => {
       setOpen(false);
-      setTab("Care paths");
-    }, 300);
+      setTab("paths");
+    }, 280);
+  };
+
+  const openMenu = () => {
+    setOpen(true);
+    requestAnimationFrame(() => setVisible(true));
   };
 
   const toggleMenu = () => {
     if (open) closeMenu();
-    else {
-      setOpen(true);
-      requestAnimationFrame(() => setVisible(true));
-    }
+    else openMenu();
   };
 
   useEffect(() => {
@@ -88,32 +67,94 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-[9999]">
-      <div className="relative border-b border-solid border-ppc-border h-[56px] flex items-center bg-white/95 backdrop-blur-sm">
-        <nav className="bg-transparent px-5 w-full">
-          <div className="max-w-[1224px] mx-auto">
-            <div className="flex justify-between items-center relative md:px-5">
-              <BrandLogo onClick={closeMenu} />
+    <header className="fixed inset-x-0 top-0 z-[9999]">
+      <div className="border-b border-ppc-border/80 bg-background/90 backdrop-blur-md">
+        <nav className="mx-auto flex h-[64px] max-w-[1180px] items-center justify-between px-5">
+          <BrandLogo onClick={closeMenu} />
 
-              <div className="flex items-center gap-2 z-50 relative">
-                <button
-                  type="button"
-                  className="block relative p-2 rounded-full text-ppc-primary transition-colors duration-300 hover:bg-[#E8F5F0] hover:text-ppc-accent"
-                  aria-label="Cart"
-                >
-                  <CartIcon />
-                </button>
-                <button
-                  type="button"
-                  className="text-ppc-primary focus:outline-none z-50 p-2 rounded-full transition-colors duration-300 hover:bg-[#E8F5F0] hover:text-ppc-accent"
-                  aria-label="Toggle menu"
-                  aria-expanded={open}
-                  onClick={toggleMenu}
-                >
-                  {open ? <CloseIcon /> : <HamburgerIcon />}
-                </button>
-              </div>
-            </div>
+          <div className="hidden items-center gap-7 md:flex">
+            <Link
+              href="/"
+              className="text-[14px] font-medium text-ppc-primary/70 transition-colors hover:text-ppc-accent"
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-[14px] font-medium text-ppc-primary/70 transition-colors hover:text-ppc-accent"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/contact"
+              className="text-[14px] font-medium text-ppc-primary/70 transition-colors hover:text-ppc-accent"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <ThemeSwitcher />
+            <button
+              type="button"
+              className="relative inline-flex h-10 w-10 items-center justify-center text-ppc-primary transition-colors hover:text-ppc-accent"
+              aria-label={count > 0 ? `Open cart, ${count} items` : "Open cart"}
+              onClick={() => {
+                if (open) {
+                  setVisible(false);
+                  setOpen(false);
+                  setTab("paths");
+                }
+                setCartOpen(true);
+              }}
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path
+                  d="M6.5 7h11.2l-.7 9.1a2 2 0 0 1-2 1.9H9.2a2 2 0 0 1-2-1.9L6.5 7Z"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 7V5.8A2.8 2.8 0 0 1 11.8 3h.4A2.8 2.8 0 0 1 15 5.8V7M8 11h8"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+              {count > 0 ? (
+                <span className="absolute top-1 right-0.5 inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-ppc-accent px-1 text-[10px] font-semibold text-white">
+                  {count > 9 ? "9+" : count}
+                </span>
+              ) : null}
+            </button>
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center text-ppc-primary transition-colors hover:text-ppc-accent"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={toggleMenu}
+            >
+              {open ? (
+                <svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path
+                    d="M3 3l10 10M13 3L3 13"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path
+                    d="M2 4h12M2 8h12M2 12h12"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
           </div>
         </nav>
       </div>
@@ -121,185 +162,175 @@ export default function Header() {
       {open ? (
         <>
           <div
-            className={`fixed inset-0 bg-ppc-dark/40 backdrop-blur-[2px] z-40 transition-opacity duration-500 ${
-              visible ? "opacity-100 visible" : "opacity-0 invisible"
+            className={`fixed inset-0 z-40 bg-ppc-dark/45 backdrop-blur-[2px] transition-opacity duration-300 ${
+              visible ? "opacity-100" : "opacity-0"
             }`}
             onClick={closeMenu}
             aria-hidden
           />
-          <div
-            className={`fixed top-0 right-0 w-full h-full md:w-[520px] z-50 transition-transform duration-500 ease-out ${
-              visible ? "translate-x-0" : "translate-x-full"
-            }`}
+
+          <aside
             role="dialog"
             aria-modal="true"
-            aria-label="Menu"
+            aria-label="Site menu"
+            className={`fixed top-0 right-0 z-50 flex h-full w-full max-w-[520px] flex-col border-l border-ppc-border bg-background shadow-[-20px_0_60px_rgba(15,23,42,0.18)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              visible ? "translate-x-0" : "translate-x-full"
+            }`}
           >
-            <div className="h-full flex flex-col bg-[#F3F7F6] shadow-[-12px_0_40px_rgba(11,61,58,0.12)] border-l border-ppc-border/60">
-              <div className="flex items-center justify-between sticky top-0 z-50 px-6 md:px-10 pt-6 md:pt-10 pb-4 bg-[#F3F7F6]/95 backdrop-blur-sm border-b border-ppc-border/50">
-                <div>
-                  <span className="font-display text-[24px] md:text-[32px] text-ppc-primary">
-                    Menu
-                  </span>
-                  <p className="text-xs text-ppc-accent font-medium mt-0.5">
-                    Explore myPPC care
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  className="p-2 rounded-full text-ppc-primary transition-colors duration-300 hover:bg-[#E8F5F0] hover:text-ppc-accent"
-                  aria-label="Close menu"
-                  onClick={closeMenu}
-                >
-                  <CloseIcon />
-                </button>
+            <div className="flex items-center justify-between border-b border-ppc-border px-5 py-4 md:px-7">
+              <div>
+                <p className="font-display text-[28px] font-semibold tracking-tight text-ppc-primary md:text-[32px]">
+                  Explore
+                </p>
+                <p className="mt-0.5 text-[12px] font-medium text-ppc-accent">
+                  Care paths, meds & support
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={closeMenu}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ppc-border text-ppc-primary hover:bg-ppc-mint"
+                aria-label="Close menu"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 3l10 10M13 3L3 13"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto">
+              <div className="border-b border-ppc-border px-5 py-5 md:px-7">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-ppc-primary/40">
+                  Featured paths
+                </p>
+                <ul className="space-y-2">
+                  {featured.map((item) => (
+                    <li key={`${item.title}-${item.accent}`}>
+                      <Link
+                        href={item.href}
+                        onClick={closeMenu}
+                        className="group flex items-center gap-3 rounded-xl border border-ppc-border bg-ppc-surface p-2.5 transition-all hover:border-ppc-accent/35 hover:bg-ppc-mint"
+                      >
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-ppc-mint md:h-16 md:w-16">
+                          <Image
+                            src={`${item.image}?v=${media.cutoutVersion}`}
+                            alt={`${item.title} ${item.accent}`}
+                            fill
+                            className="object-contain object-bottom p-1"
+                            sizes="64px"
+                            unoptimized
+                          />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="font-medium text-[15px] text-ppc-primary md:text-[17px]">
+                            {item.title}{" "}
+                            <span className="text-ppc-accent">{item.accent}</span>
+                          </p>
+                          <p className="mt-0.5 text-[12px] text-ppc-primary/50 md:text-[13px]">
+                            Clinician-guided · discreet delivery
+                          </p>
+                        </div>
+                        <span className="pr-1 text-ppc-accent opacity-50 transition-all group-hover:translate-x-0.5 group-hover:opacity-100">
+                          →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="flex-1 overflow-y-auto">
-                <div className="py-5 px-3 md:px-4">
-                  <h3 className="px-3 md:px-4 text-ppc-primary/55 mb-3 uppercase font-medium text-xs md:text-sm tracking-wide">
-                    Popular care paths
-                  </h3>
-                  <ul className="space-y-2">
-                    {popular.map((item) => (
-                      <li key={item.category}>
+              <div className="px-5 pt-4 md:px-7">
+                <div className="inline-flex w-full rounded-lg bg-ppc-mint p-1">
+                  {(
+                    [
+                      { id: "paths", label: "Care paths" },
+                      { id: "meds", label: "Medications" },
+                      { id: "support", label: "Support" },
+                    ] as const
+                  ).map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setTab(item.id)}
+                      className={`flex-1 rounded-md px-2 py-2 text-[12px] font-medium transition-all md:text-[13px] ${
+                        tab === item.id
+                          ? "bg-ppc-accent text-white shadow-sm"
+                          : "text-ppc-primary/60 hover:text-ppc-primary"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="px-3 py-4 md:px-5">
+                {tab === "paths" ? (
+                  <ul>
+                    {treatments.map((item) => (
+                      <li key={`${item.title}-${item.accent}`}>
                         <Link
                           href={item.href}
                           onClick={closeMenu}
-                          className="group flex items-center justify-between px-3 md:px-4 py-3 rounded-2xl transition-all duration-300 hover:bg-[#E8F5F0]"
+                          className="flex items-center justify-between rounded-lg px-3 py-3.5 transition-colors hover:bg-ppc-mint md:px-4"
                         >
-                          <div className="pr-3">
-                            <p className="font-medium text-base md:text-xl capitalize text-black group-hover:text-ppc-primary transition-colors">
-                              {item.category.split(" ").slice(0, -1).join(" ") || item.category}{" "}
-                              <span className="text-ppc-accent">
-                                {item.category.split(" ").slice(-1)[0]}
-                              </span>
-                            </p>
-                            <p className="text-black/45 text-sm mt-1 group-hover:text-ppc-primary/60 transition-colors">
-                              {item.description}
-                            </p>
-                          </div>
-                          <div className="relative overflow-hidden rounded-2xl w-16 h-16 md:w-20 md:h-20 bg-[#E8F1EF] flex-shrink-0 ring-1 ring-ppc-border/40 group-hover:ring-ppc-accent/40 transition-all">
-                            <Image
-                              src={`${item.image}?v=${media.cutoutVersion}`}
-                              alt={item.category}
-                              fill
-                              className="object-contain object-bottom p-1"
-                              sizes="80px"
-                              unoptimized
-                            />
-                          </div>
+                          <span className="text-[16px] font-medium md:text-[18px]">
+                            <span className="text-ppc-primary">{item.title}</span>{" "}
+                            <span className="text-ppc-accent">{item.accent}</span>
+                          </span>
+                          <span className="text-ppc-accent/50">→</span>
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </div>
+                ) : null}
 
-                <div className="flex gap-5 md:gap-6 pt-2 px-6 md:px-10 relative bg-white/50">
-                  <div className="absolute bottom-0 left-6 md:left-10 right-6 md:right-10 h-px bg-ppc-border" />
-                  {(["Care paths", "Medications", "Support"] as const).map((item) => (
-                    <button
-                      key={item}
-                      type="button"
-                      className={`py-4 text-xs md:text-sm font-medium uppercase z-10 transition-colors duration-300 ${
-                        tab === item
-                          ? "border-b-2 border-ppc-accent text-ppc-accent"
-                          : "text-black/45 hover:text-ppc-primary"
-                      }`}
-                      onClick={() => setTab(item)}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>
+                {tab === "meds" ? (
+                  <ul>
+                    {meds.map((item) => (
+                      <li key={item.name}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="flex items-center justify-between rounded-lg px-3 py-3.5 transition-colors hover:bg-ppc-mint md:px-4"
+                        >
+                          <span className="text-[16px] font-medium text-ppc-primary md:text-[18px]">
+                            {item.name}
+                          </span>
+                          <span className="text-ppc-accent/50">→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
 
-                <div className="bg-white/40 min-h-[200px]">
-                  {tab === "Care paths" ? (
-                    <ul className="px-3 md:px-4 py-3">
-                      {treatments.map((item) => (
-                        <li key={`${item.title}-${item.accent}`}>
-                          <Link
-                            href={item.href}
-                            onClick={closeMenu}
-                            className={menuItemClass}
-                          >
-                            <span className="font-medium text-base md:text-xl">
-                              <span className="text-black group-hover:text-ppc-primary transition-colors">
-                                {item.title}
-                              </span>{" "}
-                              <span className="text-ppc-accent">{item.accent}</span>
-                            </span>
-                            <span className="text-ppc-accent/50 group-hover:text-ppc-accent group-hover:translate-x-1 transition-all">
-                              →
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-
-                  {tab === "Medications" ? (
-                    <ul className="px-3 md:px-4 py-3">
-                      {meds.map((item) => (
-                        <li key={item}>
-                          <Link
-                            href="#care"
-                            onClick={closeMenu}
-                            className={menuItemClass}
-                          >
-                            <span className="font-medium text-base md:text-xl text-black group-hover:text-ppc-primary transition-colors">
-                              {item}
-                            </span>
-                            <span className="text-ppc-accent/50 group-hover:text-ppc-accent group-hover:translate-x-1 transition-all">
-                              →
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-
-                  {tab === "Support" ? (
-                    <ul className="px-3 md:px-4 py-3">
-                      {infoLinks.map((item) => (
-                        <li key={item.label}>
-                          <Link
-                            href={item.href}
-                            onClick={closeMenu}
-                            className={menuItemClass}
-                          >
-                            <span className="font-medium text-base md:text-xl text-black group-hover:text-ppc-primary transition-colors">
-                              {item.label}
-                            </span>
-                            <span className="text-ppc-accent/50 group-hover:text-ppc-accent group-hover:translate-x-1 transition-all">
-                              →
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </div>
-
-                <div className="px-6 md:px-10 py-6 border-t border-ppc-border/70 bg-[#E8F1EF]">
-                  <Link
-                    href="#"
-                    onClick={closeMenu}
-                    className="block py-3 font-medium text-ppc-primary rounded-xl px-3 -mx-3 transition-colors hover:bg-[#E8F5F0] hover:text-ppc-accent"
-                  >
-                    Sign in
-                  </Link>
-                  <Link
-                    href="#"
-                    onClick={closeMenu}
-                    className="mt-1 inline-flex items-center justify-center w-full rounded-full bg-ppc-accent text-white py-3 px-4 font-medium transition-all hover:bg-ppc-accent-soft hover:scale-[1.01]"
-                  >
-                    Create account
-                  </Link>
-                </div>
+                {tab === "support" ? (
+                  <ul>
+                    {supportLinks.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="flex items-center justify-between rounded-lg px-3 py-3.5 transition-colors hover:bg-ppc-mint md:px-4"
+                        >
+                          <span className="text-[16px] font-medium text-ppc-primary md:text-[18px]">
+                            {item.label}
+                          </span>
+                          <span className="text-ppc-accent/50">→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
-          </div>
+
+          </aside>
         </>
       ) : null}
     </header>

@@ -16,7 +16,7 @@ export default function PartnerBanner() {
                 {name}
               </span>
             </div>
-            <div className="w-px h-5 bg-white/40 mx-3" />
+            <div className="w-px h-5 bg-ppc-surface/40 mx-3" />
           </div>
         ))}
       </div>

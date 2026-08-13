@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import LongevityPage from "@/components/LongevityPage";
+
+export const metadata: Metadata = {
+  title: "Longevity Program — Live Longer — myPPC",
+  description:
+    "Test 38+ biomarkers, reveal your biological age, and get a personalized longevity action plan with clinician support.",
+};
+
+export default function LongevityRoute() {
+  return <LongevityPage />;
+}

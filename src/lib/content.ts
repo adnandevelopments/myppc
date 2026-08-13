@@ -5,6 +5,21 @@ export const media = {
   patients: "/images/patients.jpg",
   blogBg: "/images/blog.jpg",
   heroSide: "/images/hero-care.jpg",
+  pageHeroes: {
+    about: "/images/patients.jpg",
+    contact: "/images/cta.jpg",
+    faqs: "/images/wellness.jpg",
+    howItWorks: "/images/step2.jpg",
+    treatments: "/images/hero-care.jpg",
+    medications: "/images/solution1.jpg",
+    blog: "/images/blog.jpg",
+    lifestyle: "/images/wellness.jpg",
+    legal: "/images/hero-care.jpg",
+    skin: "/images/skin.jpg",
+    mental: "/images/mental.jpg",
+    habit: "/images/habit.jpg",
+    longevity: "/images/longevity.jpg",
+  },
   treatments: {
     weight: "/images/weight.png",
     hair: "/images/loss.png",
@@ -14,18 +29,13 @@ export const media = {
     mental: "/images/hair.png",
     smoking: "/images/cutouts/habit.png",
   },
-  /** bust browser cache when cutouts update */
   cutoutVersion: "16",
   steps: {
     step1: "/images/step1.jpg",
     step2: "/images/step2.jpg",
     step3: "/images/step3.jpg",
   },
-  solutions: [
-    "/images/med3.png",
-    "/images/med2.png",
-    "/images/med1.png",
-  ],
+  solutions: ["/images/med3.png", "/images/med2.png", "/images/med1.png"],
   team: [
     {
       name: "Dr. Aisha Rahman",
@@ -54,57 +64,146 @@ export const brand = {
   email: "hello@myppc.care",
   press: "press@myppc.care",
   tagline: "Private care. Practical plans. Delivered.",
+  address: "Service available across Canada",
 };
 
-export const treatments = [
+export type Treatment = {
+  slug: string;
+  title: string;
+  accent: string;
+  href: string;
+  image: string;
+  span: string;
+  summary: string;
+  benefits: string[];
+  /** Product category keys shown on this treatment page */
+  productCategories: string[];
+};
+
+export type Product = {
+  slug: string;
+  name: string;
+  image: string;
+  category: string;
+  blurb: string;
+  href: string;
+  price?: string;
+  priceLabel?: string;
+  tag?: string;
+};
+
+export const treatments: Treatment[] = [
   {
+    slug: "weight-loss",
     title: "Lose",
     accent: "weight",
-    href: "#care",
+    href: "/treatments/weight-loss",
     image: media.treatments.weight,
     span: "md:col-span-4",
+    summary:
+      "Clinician-guided metabolic support with clear goals, discreet delivery, and ongoing check-ins.",
+    benefits: [
+      "Personalized plan after medical review",
+      "Progress tracking through the portal",
+      "Discreet pharmacy fulfillment",
+    ],
+    productCategories: ["weight-loss"],
   },
   {
+    slug: "hair-loss",
     title: "Regrow",
     accent: "hair",
-    href: "#care",
+    href: "/hairloss",
     image: media.treatments.hair,
     span: "md:col-span-2",
+    summary:
+      "Evidence-based hair care options reviewed by licensed clinicians for lasting results.",
+    benefits: [
+      "Targeted topical and oral options",
+      "Clear expectations on timelines",
+      "Follow-up support included",
+    ],
+    productCategories: ["hair-loss"],
   },
   {
+    slug: "skin",
     title: "Get glowing",
     accent: "skin",
-    href: "#care",
+    href: "/skincare",
     image: media.treatments.skin,
     span: "md:col-span-2",
+    summary:
+      "Dermatology-informed routines and prescriptions for clearer, calmer skin — online.",
+    benefits: [
+      "Plans matched to your skin goals",
+      "Ingredient guidance you can trust",
+      "Convenient refills when approved",
+    ],
+    productCategories: ["skin"],
   },
   {
+    slug: "longevity",
     title: "Live",
     accent: "longer",
-    href: "#care",
+    href: "/longevity",
     image: media.treatments.longevity,
     span: "md:col-span-2",
+    summary:
+      "Longevity-focused care that prioritizes energy, recovery, and sustainable habits.",
+    benefits: [
+      "Clinician-reviewed wellness plans",
+      "Practical daily routines",
+      "Support when questions come up",
+    ],
+    productCategories: ["longevity"],
   },
   {
+    slug: "sexual-health",
     title: "Sexual",
     accent: "health",
-    href: "#care",
+    href: "/sexual-health",
     image: media.treatments.sex,
     span: "md:col-span-2",
+    summary:
+      "Private sexual health care with licensed providers and discreet packaging.",
+    benefits: [
+      "Judgment-free clinical intake",
+      "Trusted medication options",
+      "100% discreet delivery",
+    ],
+    productCategories: ["sexual-health"],
   },
   {
+    slug: "mental-health",
     title: "Tackle",
     accent: "mental health",
-    href: "#care",
+    href: "/mental-health",
     image: media.treatments.mental,
     span: "md:col-span-2",
+    summary:
+      "Thoughtful mental health support with clinicians who listen before they prescribe.",
+    benefits: [
+      "Secure intake and messaging",
+      "Care plans built around you",
+      "Ongoing check-ins available",
+    ],
+    productCategories: ["mental-health"],
   },
   {
+    slug: "quit-smoking",
     title: "Quit",
     accent: "smoking",
-    href: "#care",
+    href: "/zonnic",
     image: media.treatments.smoking,
     span: "md:col-span-2",
+    summary:
+      "Habit-change support designed to help you quit with structure and clinical guidance.",
+    benefits: [
+      "Step-by-step quit pathway",
+      "Medication options when suitable",
+      "Accountability through the portal",
+    ],
+    productCategories: ["quit-smoking"],
   },
 ];
 
@@ -167,6 +266,25 @@ export const faqs = [
   },
 ];
 
+export const productFaqs = [
+  {
+    q: "How long does shipping take?",
+    a: "Once a clinician approves your plan, partner pharmacies typically prepare and ship within a few business days. You’ll receive tracking updates in your portal.",
+  },
+  {
+    q: "Can I message my care team?",
+    a: "Yes. Secure portal messaging lets you ask about dosing, side effects, or refill timing without booking another appointment.",
+  },
+  {
+    q: "What if a medication isn’t right for me?",
+    a: "Your clinician may recommend an alternative, adjust the plan, or advise against treatment if it’s not clinically appropriate.",
+  },
+  {
+    q: "Are packaging and billing discreet?",
+    a: "Shipments use plain packaging. Billing descriptors are designed to stay private on your statement where possible.",
+  },
+];
+
 export const trustItems = [
   "Licensed pharmacy partners",
   "Clinician-reviewed plans",
@@ -202,11 +320,548 @@ export const reviews = [
   },
 ];
 
-export const meds = [
-  "Sildenafil",
-  "Tadalafil",
-  "Hair Foam",
-  "Semaglutide options",
-  "Testosterone Support",
-  "Lidocaine Spray",
+/** Only the medications shown in the reference catalog image. */
+export const products: Product[] = [
+  {
+    slug: "cialis",
+    name: "Cialis®",
+    image: "/images/med1.png",
+    category: "sexual-health",
+    blurb: "Longer-acting support for sexual health when clinically appropriate.",
+    href: "/medications/cialis",
+    price: "$48",
+    priceLabel: "From $48",
+  },
+  {
+    slug: "viagra",
+    name: "Viagra®",
+    image: "/images/med2.png",
+    category: "sexual-health",
+    blurb: "Trusted option reviewed by licensed clinicians.",
+    href: "/medications/viagra",
+    price: "$42",
+    priceLabel: "From $42",
+  },
+  {
+    slug: "chewalis",
+    name: "Chewalis",
+    image: "/images/med3.png",
+    category: "sexual-health",
+    blurb: "Convenient chewable format for discreet daily life.",
+    href: "/medications/chewalis",
+    price: "$138",
+    priceLabel: "From $138",
+  },
+  {
+    slug: "ozempic",
+    name: "Ozempic®",
+    image: "/images/weight.png",
+    category: "weight-loss",
+    blurb: "GLP-1 option as part of a supervised metabolic plan.",
+    href: "/medications/ozempic",
+    price: "$299",
+    priceLabel: "Program pricing from $299",
+  },
+  {
+    slug: "mounjaro",
+    name: "Mounjaro®",
+    image: "/images/cutouts/weight.png",
+    category: "weight-loss",
+    blurb: "Clinician-guided dual-agonist pathway for eligible patients.",
+    href: "/medications/mounjaro",
+    price: "$329",
+    priceLabel: "Program pricing from $329",
+  },
+  {
+    slug: "anti-aging-cream",
+    name: "Anti-aging Cream",
+    image: "/images/cutouts/skin.png",
+    category: "skin",
+    blurb: "Treat fine lines, uneven tone, and support collagen with a clinician-guided formula.",
+    href: "/anti-aging-cream",
+    price: "$110",
+    priceLabel: "For only $110/month",
+    tag: "Prescription · 3 strengths",
+  },
+  {
+    slug: "acne-cream",
+    name: "Acne Cream",
+    image: "/images/skin.jpg",
+    category: "skin",
+    blurb: "Prescription-strength support for breakouts, texture, and clearer-looking skin.",
+    href: "/acne-cream",
+    price: "$95",
+    priceLabel: "For only $95/month",
+    tag: "Prescription · 3 strengths",
+  },
+  {
+    slug: "hyperpigmentation-cream",
+    name: "Hyperpigmentation Cream",
+    image: "/images/cutouts/skin.png",
+    category: "skin",
+    blurb: "Target dark spots and uneven tone with a dermatologist-informed brightening plan.",
+    href: "/hyperpigmentation-cream",
+    price: "$105",
+    priceLabel: "For only $105/month",
+    tag: "3 strengths",
+  },
+  {
+    slug: "hair-foam",
+    name: "Finasteride & Minoxidil Foam",
+    image: "/images/loss.png",
+    category: "hair-loss",
+    blurb: "Targeted topical support for hair regrowth paths.",
+    href: "/medications/hair-foam",
+    price: "$185",
+    priceLabel: "From $185 · 2 months",
+  },
+  {
+    slug: "zonnic",
+    name: "ZONNIC Nicotine Pouches",
+    image: "/images/cutouts/habit.png",
+    category: "quit-smoking",
+    blurb:
+      "Health Canada–authorized nicotine pouches to help manage cravings while you quit.",
+    href: "/zonnic",
+    price: "$12.50",
+    priceLabel: "From $12.50 / tin · 24 × 4 mg",
+    tag: "NRT · mint flavours",
+  },
+  {
+    slug: "semaglutide",
+    name: "Semaglutide (Generic Ozempic)",
+    image: "/images/cutouts/wellness.png",
+    category: "weight-loss",
+    blurb: "Generic GLP-1 pathway when a clinician approves it.",
+    href: "/medications/semaglutide",
+    price: "$249",
+    priceLabel: "Program pricing from $249",
+  },
+];
+
+/** Lightweight list used in menus/home chips */
+export const meds = products.map((p) => ({
+  name: p.name,
+  href: p.href,
+  blurb: p.blurb,
+}));
+
+export function getProductsByCategories(categories: string[]) {
+  return products.filter((p) => categories.includes(p.category));
+}
+
+export function getProduct(slug: string) {
+  return products.find((p) => p.slug === slug);
+}
+
+export const blogPosts = [
+  {
+    slug: "starting-online-care",
+    title: "What to expect when you start online care",
+    category: "Lifestyle",
+    excerpt:
+      "A simple walkthrough of intake, clinician review, and how discreet delivery works.",
+  },
+  {
+    slug: "habits-that-stick",
+    title: "Building habits that stick with treatment",
+    category: "Lifestyle",
+    excerpt:
+      "Small routines that make weight, hair, and mental health plans easier to follow.",
+  },
+  {
+    slug: "privacy-matters",
+    title: "Why privacy matters in modern healthcare",
+    category: "Health notes",
+    excerpt:
+      "How myPPC approaches confidentiality from intake through packaging and billing.",
+  },
+  {
+    slug: "skin-basics",
+    title: "Skincare basics before starting a prescription plan",
+    category: "Skincare",
+    excerpt:
+      "What clinicians look for and how to prepare questions for your intake.",
+  },
+];
+
+export function getTreatment(slug: string) {
+  return treatments.find((t) => t.slug === slug);
+}
+
+/** Body optimization / weight-loss landing (reference sections). */
+export const bodyOptimization = {
+  hero: {
+    eyebrow: "GLP-1 weight loss programs",
+    title: "End your weight war — for good",
+    description:
+      "Doctor-led, personalized body optimization with clinician review, discreet delivery, and ongoing support.",
+    highlight: "Lose up to 22.5% of your body weight*",
+    note: "*Results vary. Based on published GLP-1 study outcomes; individual results depend on clinical eligibility and adherence.",
+  },
+  trust: [
+    "Licensed Canadian clinicians",
+    "Partner pharmacy fulfillment",
+    "Discreet temperature-aware shipping",
+    "Ongoing portal support",
+  ],
+  steps: [
+    {
+      step: "01",
+      title: "Choose treatment",
+      description:
+        "Browse GLP-1 options like Ozempic®, Mounjaro®, or Semaglutide and start a focused weight-loss intake.",
+    },
+    {
+      step: "02",
+      title: "Create your profile",
+      description:
+        "Share your history, goals, and labs if needed. A licensed clinician reviews whether a plan is right for you.",
+    },
+    {
+      step: "03",
+      title: "Fast & discreet delivery",
+      description:
+        "If approved, your medication ships discreetly — with messaging support for titration and questions.",
+    },
+  ],
+  results: [
+    {
+      title: "Clearer structure",
+      body: "Having a clinician-guided plan made dosing and check-ins feel manageable from week one.",
+      name: "Alex M.",
+    },
+    {
+      title: "Support that responds",
+      body: "I asked about side effects in the portal and got practical guidance quickly.",
+      name: "Priya S.",
+    },
+    {
+      title: "Private and straightforward",
+      body: "No awkward clinic wait — just a clear path, discreet packaging, and steady follow-up.",
+      name: "Jordan K.",
+    },
+  ],
+  pricing: [
+    {
+      title: "Initial consult",
+      value: "$99",
+      detail: "One-time clinical review to assess eligibility and next steps.",
+    },
+    {
+      title: "Program support",
+      value: "$60/mo",
+      detail: "Ongoing clinician access, prescription updates, and pharmacy counselling.",
+    },
+    {
+      title: "Medication",
+      value: "Varies",
+      detail: "Medication cost depends on the approved option and dose.",
+    },
+  ],
+  faqs: [
+    {
+      q: "How much does the weight loss program cost?",
+      a: "The initial consultation fee is $99. Medication cost plus a $60 monthly program fee are charged when you continue. The program fee includes clinician access, prescription updates, and pharmacy counselling.",
+    },
+    {
+      q: "Do you accept insurance?",
+      a: "Coverage depends on your provider. We can share a detailed invoice on request so you can submit for reimbursement if your plan allows it.",
+    },
+    {
+      q: "What can I expect after I sign up?",
+      a: "After your intake, a licensed clinician reviews eligibility and may request labs. You’ll get updates and messages in your secure portal.",
+    },
+    {
+      q: "Why do I need a blood test?",
+      a: "Labs help your clinician understand metabolic health and tailor advice safely before prescribing.",
+    },
+    {
+      q: "What are the side effects of GLP-1 medications?",
+      a: "Common effects can include nausea, vomiting, abdominal pain, constipation, or diarrhea. Serious effects are uncommon but possible. Your clinician will review risks and whether treatment is appropriate.",
+    },
+    {
+      q: "How do I schedule a call with my provider?",
+      a: "After submitting your questionnaire, message your clinician in the portal to request a call. They’ll share a scheduling link when available.",
+    },
+    {
+      q: "Can I cancel at any time?",
+      a: "Yes. You can cancel to avoid future charges. Previously incurred monthly fees are typically non-refundable.",
+    },
+    {
+      q: "How do GLP-1s work?",
+      a: "GLP-1 medications mimic a natural hormone that helps regulate appetite and fullness, which can reduce food intake and support weight loss when clinically appropriate.",
+    },
+    {
+      q: "Which GLP-1s does myPPC offer?",
+      a: "Depending on eligibility, clinicians may consider options such as Ozempic®, Mounjaro®, and Semaglutide (generic pathways where available).",
+    },
+  ],
+};
+
+/** Hair loss landing (reference: myrocky.ca/hairloss). */
+export const hairLoss = {
+  hero: {
+    eyebrow: "Hair loss care online",
+    title: "Make hair loss optional",
+    description:
+      "Clinician-reviewed treatments to help slow thinning, support regrowth, and keep your plan private — from intake to discreet delivery.",
+    highlight: "Health Canada–authorized pathways when clinically appropriate",
+    note: "Results vary. Hair treatments often need consistent use for 3–6+ months. A licensed clinician reviews eligibility before prescribing.",
+  },
+  trust: [
+    "Licensed Canadian clinicians",
+    "100% online & discreet",
+    "Partner pharmacy fulfillment",
+    "Ongoing clinical support",
+  ],
+  /** Priced offer cards for View options carousel (reference hairloss shop). */
+  offers: [
+    {
+      id: "foam",
+      title: "2-in-1 Foam",
+      badge: "Most Popular",
+      image: "/images/loss.png",
+      lines: ["Finasteride & Minoxidil combination foam"],
+      note: "*Subject to patient consultation",
+      supply: "2 Months Supply",
+      price: "$185",
+      href: "/contact",
+    },
+    {
+      id: "tablet-topical",
+      title: "Tablet & Topical solution",
+      image: "/images/med2.png",
+      lines: [
+        "Propecia (finasteride) Tablets*",
+        "Minoxidil (Rogaine) Solution",
+      ],
+      note: "*Subject to patient consultation",
+      supply: "3 Months Supply",
+      price: "$180",
+      href: "/contact",
+    },
+    {
+      id: "topical",
+      title: "Topical Solution",
+      image: "/images/med3.png",
+      lines: ["Minoxidil (Rogaine)"],
+      supply: "3 Months Supply",
+      price: "$101.25",
+      compareAt: "$135",
+      href: "/contact",
+    },
+    {
+      id: "tablet",
+      title: "Tablet Solution",
+      image: "/images/med1.png",
+      lines: ["Finasteride (Propecia) Tablets*"],
+      note: "*Subject to patient consultation",
+      supply: "3 Months Supply",
+      price: "$165",
+      href: "/contact",
+    },
+  ],
+  patterns: [
+    {
+      title: "All-over thinning",
+      body: "If you’re seeing more scalp through the crown or top, treatments can help support follicle activity before more ground is lost.",
+    },
+    {
+      title: "Receding hairline",
+      body: "A higher forehead is common with family history and aging. Starting earlier often means more hair to protect.",
+    },
+    {
+      title: "Crown thinning",
+      body: "That spot everyone else notices first. Pattern hair loss here responds best when you act consistently over months.",
+    },
+  ],
+  steps: [
+    {
+      step: "01",
+      title: "Choose a path",
+      description:
+        "Explore foam, oral, or topical options and start a short hair-loss intake with your goals and history.",
+    },
+    {
+      step: "02",
+      title: "Clinician review",
+      description:
+        "A licensed clinician reviews eligibility, discusses expectations, and recommends a plan if appropriate.",
+    },
+    {
+      step: "03",
+      title: "Discreet delivery",
+      description:
+        "Approved medication ships to your door — with portal support for questions, refills, and follow-ups.",
+    },
+  ],
+  results: [
+    {
+      title: "Simple daily routine",
+      body: "The foam fit my morning routine. After a few months I was shedding less in the shower.",
+      name: "Marcus T.",
+    },
+    {
+      title: "Clear timelines",
+      body: "They set expectations early — stick with it for months. That honesty made it easier to stay consistent.",
+      name: "Dev R.",
+    },
+    {
+      title: "Private from start to finish",
+      body: "No waiting room. Packaging was discreet and check-ins stayed in the portal.",
+      name: "Chris L.",
+    },
+  ],
+  pricing: [
+    {
+      title: "Clinical review",
+      value: "Included*",
+      detail: "Intake reviewed by a licensed clinician before any prescription decision.",
+    },
+    {
+      title: "2-in-1 foam",
+      value: "From $70",
+      detail: "Typical starting range for combination foam supply; exact pricing confirmed after approval.",
+    },
+    {
+      title: "Ongoing support",
+      value: "Portal",
+      detail: "Message for refill timing, application questions, and plan adjustments.",
+    },
+  ],
+  faqs: [
+    {
+      q: "How long until I see results?",
+      a: "Most people need consistent use for about 3–6 months before meaningful changes show. Some notice reduced shedding sooner; denser regrowth can take longer.",
+    },
+    {
+      q: "What’s the difference between foam and tablets?",
+      a: "Oral finasteride targets DHT systemically. Topical minoxidil supports growth at the scalp. Combination foam aims to deliver both pathways topically for people who prefer to avoid daily pills when clinically appropriate.",
+    },
+    {
+      q: "Is hair loss treatment right if I’m only starting to thin?",
+      a: "Often yes — earlier intervention can help protect existing hair. Even with a full head of hair, family history of male pattern baldness is a reason many men ask about preventive plans.",
+    },
+    {
+      q: "Do I need an in-person visit?",
+      a: "Care starts online with a questionnaire and clinician review. Follow-ups stay in your secure portal unless your clinician asks for more information.",
+    },
+    {
+      q: "Are treatments safe?",
+      a: "Approved options have known benefits and risks. Side effects are uncommon for many users but possible. Your clinician will review whether a specific option is appropriate for you.",
+    },
+    {
+      q: "Can I cancel or pause?",
+      a: "Yes. You can stop future orders. Talk with your clinician before stopping prescription therapy, especially if you’ve been on treatment for a while.",
+    },
+  ],
+};
+
+export const aboutPillars = [
+  {
+    label: "Mission",
+    title: "Breaking the stigma and redefining health for everyone.",
+    body: "At myPPC, we’re on a mission to normalize everyday health concerns and remove the friction that keeps too many people from seeking care. By creating a safe, accessible, and private platform, we help you take control of your health and start conversations that matter.",
+  },
+  {
+    label: "Goal",
+    title: "A patient-centred approach where you come first.",
+    body: "Our goal is simple: put patients at the centre of everything we do. From first consultation to ongoing support, we focus on building trust, delivering personalized care, and making sure every patient feels heard.",
+  },
+  {
+    label: "Focus",
+    title: "A dedicated team with you every step of the way.",
+    body: "Behind myPPC is a team of healthcare professionals covering medicine, pharmacy, and mental health. We work together to provide comprehensive solutions tailored to your needs — online, discreet, and practical.",
+  },
+];
+
+export const leadershipTeam = [
+  {
+    name: "Dr. Aisha Rahman",
+    credentials: "MD, CCFP",
+    role: "Chief Medical Officer",
+    image: "/images/team1.jpg",
+    href: "/about#leadership",
+  },
+  {
+    name: "Jordan Lee",
+    credentials: "RPh, MPharm",
+    role: "Chief Operating Officer",
+    image: "/images/team2.jpg",
+    href: "/about#leadership",
+  },
+  {
+    name: "Dr. Sam Okonkwo",
+    credentials: "MD, FAPA",
+    role: "Chief Clinical Advisor",
+    image: "/images/team3.jpg",
+    href: "/about#leadership",
+  },
+];
+
+export const medicalAdvisory = [
+  {
+    name: "Dr. Sam Okonkwo",
+    credentials: "MD, FAPA",
+    role: "Psychiatry Advisor",
+    bio: "Board-focused mental health clinician helping myPPC design private, stigma-free care pathways. Passionate about accessible virtual psychiatry support and clear patient education.",
+  },
+  {
+    name: "Nora Patel",
+    credentials: "Nurse Practitioner",
+    role: "Primary Care",
+    bio: "Experienced in community-based clinics and virtual platforms. Focused on improving healthcare accessibility through practical, technology-enabled primary care.",
+  },
+  {
+    name: "Chris Adeyemi",
+    credentials: "Nurse Practitioner",
+    role: "Family Medicine",
+    bio: "Specializes in family medicine, health promotion, and occupational health. Dedicated to patient-centred care across ages with a personal, steady approach.",
+  },
+  {
+    name: "Morgan Blake",
+    credentials: "Nurse Practitioner",
+    role: "Primary Care",
+    bio: "Supports comprehensive primary care and wellness initiatives, with a strong interest in reducing barriers for patients who prefer discreet online options.",
+  },
+  {
+    name: "Elena Vargas",
+    credentials: "Nurse Practitioner",
+    role: "Metabolic Health",
+    bio: "Experienced in primary care with a focus on medical weight management. Combines clinical guidance with lifestyle support for sustainable habits.",
+  },
+];
+
+export const pharmacyAdvisory = [
+  {
+    name: "Jordan Lee",
+    credentials: "RPh, PharmD",
+    role: "Pharmacy Lead",
+    bio: "Licensed pharmacist with experience across community pharmacy and healthcare operations. Focused on safe fulfillment, clear counseling, and practical patient support.",
+  },
+  {
+    name: "Amira Hassan",
+    credentials: "RPh, PharmD",
+    role: "Clinical Pharmacy",
+    bio: "Hospital and community pharmacy background with a strong interest in patient education and research-informed medication guidance.",
+  },
+  {
+    name: "Daniel Cho",
+    credentials: "RPh, PharmD",
+    role: "Retail Pharmacy",
+    bio: "Passionate about mental health and accessible pharmacy care. Brings retail and startup experience to improve everyday patient workflows.",
+  },
+  {
+    name: "Riley Quinn",
+    credentials: "Fulfilment Coordinator",
+    role: "Operations",
+    bio: "Keeps telehealth fulfillment organized and reliable — from order readiness to discreet shipping coordination.",
+  },
+  {
+    name: "Samira Noor",
+    credentials: "Logistics & Marketing",
+    role: "Growth Ops",
+    bio: "Connects clear patient messaging with smooth logistics so care stays easy to understand and easy to receive.",
+  },
 ];

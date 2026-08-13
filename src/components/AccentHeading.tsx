@@ -19,10 +19,10 @@ export default function AccentHeading({
 
   return (
     <Tag
-      className={`font-display md:text-[42px] text-[24px] font-[400] leading-[1.15] tracking-[-0.01em] ${className}`}
+      className={`font-display text-[24px] font-[400] leading-[1.15] tracking-[-0.02em] md:text-[42px] ${className}`}
     >
       {blackText}{" "}
-      <span className="text-ppc-accent font-[600]">{accentText}</span>
+      <span className="font-[600] text-ppc-accent">{accentText}</span>
       {blackTextAfter ? (
         <span className={blackTextAfterClass}> {blackTextAfter}</span>
       ) : null}
