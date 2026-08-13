@@ -54,9 +54,15 @@ export default function QuitSmokingPage() {
   const { addItem } = useCart();
   const [openPanel, setOpenPanel] = useState<string | null>("why");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [flavorId, setFlavorId] = useState(quitSmoking.flavors[0].id);
-  const [frequencyId, setFrequencyId] = useState(quitSmoking.frequencies[0].id);
-  const [packId, setPackId] = useState(quitSmoking.packs[0].id);
+  const [flavorId, setFlavorId] = useState<(typeof quitSmoking.flavors)[number]["id"]>(
+    quitSmoking.flavors[0].id,
+  );
+  const [frequencyId, setFrequencyId] = useState<
+    (typeof quitSmoking.frequencies)[number]["id"]
+  >(quitSmoking.frequencies[0].id);
+  const [packId, setPackId] = useState<(typeof quitSmoking.packs)[number]["id"]>(
+    quitSmoking.packs[0].id,
+  );
 
   const flavor =
     quitSmoking.flavors.find((f) => f.id === flavorId) ?? quitSmoking.flavors[0];
