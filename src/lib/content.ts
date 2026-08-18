@@ -22,15 +22,15 @@ export const media = {
     longevity: "/images/longevity.jpg",
   },
   treatments: {
-    weight: "/images/weight.png",
-    hair: "/images/loss.png",
-    skin: "/images/cutouts/skin.png",
-    longevity: "/images/cutouts/longevity.png",
-    sex: "/images/med1.png",
-    mental: "/images/hair.png",
-    smoking: "/images/cutouts/habit.png",
+    weight: "/images/care-weight.png",
+    hair: "/images/care-hair.png",
+    skin: "/images/care-skin.png",
+    longevity: "/images/care-longevity.png",
+    sex: "/images/care-sexual.png",
+    mental: "/images/care-mental.png",
+    smoking: "/images/care-habit.png",
   },
-  cutoutVersion: "17",
+  cutoutVersion: "19",
   steps: {
     step1: "/images/process-step1.png",
     step2: "/images/process-step2.png",
@@ -800,6 +800,7 @@ export const leadershipTeam: Clinician[] = [
     image: "/images/team1.jpg",
     href: "/about#leadership",
     badges: ["CFPC", "U of T"],
+    bio: "Leads clinical standards at medviCare so every plan is reviewed with the same care you would expect in clinic — private, practical, and easy to follow.",
   },
   {
     name: "Jordan Lee",
@@ -808,6 +809,7 @@ export const leadershipTeam: Clinician[] = [
     image: "/images/team2.jpg",
     href: "/about#leadership",
     badges: ["RPh", "OCP"],
+    bio: "Licensed pharmacist focused on safe fulfillment, clear counseling, and getting approved plans to your door without extra steps.",
   },
   {
     name: "Dr. Sam Okonkwo",
@@ -816,6 +818,7 @@ export const leadershipTeam: Clinician[] = [
     image: "/images/team3.jpg",
     href: "/about#leadership",
     badges: ["APA", "RCPSC"],
+    bio: "Board-focused mental health clinician helping medviCare design private, stigma-free care pathways.",
   },
 ];
 
@@ -827,6 +830,7 @@ export const clinicians: Clinician[] = [
     role: "Endocrinology Advisor",
     image: "/images/team-priya.png",
     badges: ["FRCPC"],
+    bio: "Advises on metabolic and hormone-related care pathways reviewed by licensed clinicians.",
   },
   {
     name: "Dr. Maya Chen",
@@ -834,18 +838,21 @@ export const clinicians: Clinician[] = [
     role: "Family Medicine",
     image: "/images/team-maya.png",
     badges: ["CFPC"],
+    bio: "Helps shape intake and follow-up so patients get clear next steps without clinic friction.",
   },
   {
     name: "Nora Patel",
     credentials: "NP",
     role: "Primary Care",
     image: "/images/team-nora.png",
+    bio: "Experienced in community clinics and virtual platforms. Focused on making primary care easier to reach.",
   },
   {
     name: "Chris Adeyemi",
     credentials: "NP",
     role: "Family Medicine",
     image: "/images/team-chris.png",
+    bio: "Specializes in family medicine and health promotion, with a steady, personal approach across ages.",
   },
   {
     name: "Amira Hassan",
@@ -853,18 +860,21 @@ export const clinicians: Clinician[] = [
     role: "Clinical Pharmacy",
     image: "/images/team-amira.png",
     badges: ["OCP"],
+    bio: "Hospital and community pharmacy background with a focus on research-informed medication guidance.",
   },
   {
     name: "Dr. Omar Farid",
     credentials: "MD, CCFP",
     role: "Metabolic Health",
     image: "/images/team-omar.png",
+    bio: "Supports metabolic and weight-related care with clear plans patients can actually stick to.",
   },
   {
     name: "Elena Vargas",
     credentials: "NP",
     role: "Weight Management",
     image: "/images/team-elena.png",
+    bio: "Guides medical weight management with clinical plans and practical lifestyle support.",
   },
 ];
 

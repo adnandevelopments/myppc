@@ -27,12 +27,12 @@ export default function TreatmentsPage() {
               href={item.href}
               className="motion-card group grid grid-cols-[140px_1fr] overflow-hidden rounded-2xl border-2 border-ppc-accent/35 bg-ppc-surface transition-all hover:border-ppc-accent md:grid-cols-[180px_1fr]"
             >
-              <div className="relative min-h-[160px] bg-ppc-mint md:min-h-[180px]">
+              <div className="relative min-h-[160px] overflow-hidden bg-ppc-mint md:min-h-[180px]">
                 <Image
                   src={`${item.image}?v=${media.cutoutVersion}`}
                   alt={`${item.title} ${item.accent}`}
                   fill
-                  className="object-contain object-bottom p-2"
+                  className="object-cover object-[center_20%]"
                   sizes="(max-width: 768px) 140px, 180px"
                   unoptimized
                 />

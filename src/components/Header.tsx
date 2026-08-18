@@ -259,7 +259,7 @@ export default function Header() {
                             src={`${item.image}?v=${media.cutoutVersion}`}
                             alt={`${item.title} ${item.accent}`}
                             fill
-                            className="object-contain object-bottom p-1"
+                            className="object-cover object-top"
                             sizes="64px"
                             unoptimized
                           />
@@ -337,7 +337,7 @@ export default function Header() {
                           onClick={closeMenu}
                           className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-ppc-mint md:px-4"
                         >
-                          <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-ppc-mint">
+                          <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-white ring-1 ring-ppc-border/50">
                             <Image
                               src={`${item.image}?v=${media.cutoutVersion}`}
                               alt=""

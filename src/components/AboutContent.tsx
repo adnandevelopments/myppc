@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "@/components/Motion";
+import ClinicianModal from "@/components/ClinicianModal";
 import Reveal from "@/components/Reveal";
 import TeamCarousel from "@/components/TeamCarousel";
 import {
@@ -15,7 +16,11 @@ import {
   pharmacyAdvisory,
 } from "@/lib/content";
 
-const pillarImages = ["/images/hero5.png", media.heroPeople, "/images/hero3.png"];
+const pillarImages = [
+  "/images/hero5.png",
+  media.heroPeople,
+  "/images/hero3.png",
+];
 
 function AdvisoryBand({
   id,
@@ -47,6 +52,9 @@ function AdvisoryBand({
 
 export default function AboutContent() {
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
+  const [selected, setSelected] = useState<(typeof leadershipTeam)[number] | null>(
+    null,
+  );
 
   return (
     <>
@@ -124,7 +132,11 @@ export default function AboutContent() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {leadershipTeam.map((member, i) => (
               <Reveal key={member.name} delay={100 + i * 80} variant="fade-up">
-                <article className="motion-card group overflow-hidden rounded-2xl border border-ppc-border bg-white">
+                <button
+                  type="button"
+                  onClick={() => setSelected(member)}
+                  className="motion-card group w-full overflow-hidden rounded-2xl border border-ppc-border bg-white text-left"
+                >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <Image
                       src={member.image}
@@ -144,8 +156,11 @@ export default function AboutContent() {
                     <p className="mt-1 text-[14px] font-medium text-ppc-primary/80">
                       {member.credentials}
                     </p>
+                    <p className="mt-3 text-[12px] font-semibold text-ppc-accent">
+                      View profile →
+                    </p>
                   </div>
-                </article>
+                </button>
               </Reveal>
             ))}
           </div>
@@ -192,7 +207,9 @@ export default function AboutContent() {
                     <span className="text-[16px] font-medium text-ppc-primary md:text-[18px]">
                       {item.q}
                     </span>
-                    <span className="text-ppc-accent">{isOpen ? "−" : "+"}</span>
+                    <span className="text-ppc-accent">
+                      {isOpen ? "−" : "+"}
+                    </span>
                   </button>
                   {isOpen ? (
                     <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
@@ -211,6 +228,7 @@ export default function AboutContent() {
           </Link>
         </div>
       </section>
+      <ClinicianModal person={selected} onClose={() => setSelected(null)} />
     </>
   );
 }
