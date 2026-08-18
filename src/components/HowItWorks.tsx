@@ -8,100 +8,150 @@ import { howItWorks } from "@/lib/content";
 export default function HowItWorks() {
   const [active, setActive] = useState(0);
   const current = howItWorks[active] ?? howItWorks[0];
+  const progress = ((active + 1) / howItWorks.length) * 100;
+
+  const go = (dir: -1 | 1) => {
+    setActive((i) => (i + dir + howItWorks.length) % howItWorks.length);
+  };
 
   return (
-    <section id="how-it-works" className="bg-ppc-dark px-5 py-16 text-white md:py-24">
-      <div className="mx-auto max-w-[1180px]">
-        <Reveal variant="blur-up">
-          <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
-            Process
-          </p>
-        </Reveal>
-        <Reveal delay={80} variant="fade-up">
-          <h2 className="mb-3 max-w-xl font-display text-[32px] font-[400] leading-[1.1] tracking-[-0.02em] md:text-[44px]">
-            How myPPC works
-          </h2>
-        </Reveal>
-        <Reveal delay={140}>
-          <p className="mb-10 max-w-lg text-[16px] text-white/65 md:mb-14 md:text-[18px]">
-            Three clear steps from first question to a plan you can follow.
-          </p>
-        </Reveal>
-
-        <div className="grid items-stretch gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-          <div className="relative space-y-3">
-            <div
-              className="absolute top-4 bottom-4 left-[19px] w-px origin-top bg-ppc-surface/15"
-              aria-hidden
-            />
-            {howItWorks.map((step, i) => {
-              const isActive = active === i;
-              return (
-                <Reveal key={step.step} delay={160 + i * 90} variant="slide-left">
-                  <button
-                    type="button"
-                    onClick={() => setActive(i)}
-                    onMouseEnter={() => setActive(i)}
-                    className={`relative w-full rounded-xl border px-4 py-4 text-left transition-all duration-300 md:px-5 md:py-5 ${
-                      isActive
-                        ? "border-ppc-accent/50 bg-ppc-surface/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
-                        : "border-transparent bg-transparent hover:bg-ppc-surface/5"
-                    }`}
-                  >
-                    <div className="flex gap-4">
-                      <span
-                        className={`relative z-10 mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold transition-all duration-300 ${
-                          isActive
-                            ? "scale-105 bg-ppc-accent text-white"
-                            : "bg-ppc-surface/10 text-white/70"
-                        }`}
-                      >
-                        {step.step}
-                      </span>
-                      <div>
-                        <h3 className="font-helvetica-display text-[20px] font-medium md:text-[24px]">
-                          {step.title}
-                        </h3>
-                        <p
-                          className={`mt-1 text-[14px] leading-relaxed transition-colors duration-300 md:text-[15px] ${
-                            isActive ? "text-white/75" : "text-white/45"
-                          }`}
-                        >
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                </Reveal>
-              );
-            })}
+    <section id="how-it-works" className="site-section bg-ppc-dark text-white">
+      <div className="site-inner">
+        <div className="mb-10 grid gap-6 md:mb-12 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+          <div>
+            <Reveal variant="blur-up">
+              <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
+                Process
+              </p>
+            </Reveal>
+            <Reveal delay={80} variant="fade-up">
+              <h2 className="max-w-xl font-display text-[32px] font-[400] leading-[1.1] tracking-[-0.02em] md:text-[44px]">
+                How medviCare works
+              </h2>
+            </Reveal>
           </div>
+          <Reveal delay={140}>
+            <p className="max-w-md text-[16px] text-white/70 md:justify-self-end md:text-[17px]">
+              Three clear steps from first question to a plan at your door.
+              Click a step to preview it.
+            </p>
+          </Reveal>
+        </div>
 
-          <Reveal delay={200} variant="scale-in" className="h-full min-h-[320px]">
-            <div className="relative h-full min-h-[320px] overflow-hidden rounded-2xl md:min-h-[460px]">
+        <div className="mb-4 h-1 overflow-hidden rounded-full bg-white/10">
+          <div
+            className="h-full rounded-full bg-ppc-accent-soft transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        <div className="mb-8 grid gap-3 md:grid-cols-3">
+          {howItWorks.map((step, i) => {
+            const isActive = active === i;
+            return (
+              <button
+                key={step.step}
+                type="button"
+                onClick={() => setActive(i)}
+                onMouseEnter={() => setActive(i)}
+                className={`rounded-2xl border px-5 py-5 text-left transition-all duration-300 ${
+                  isActive
+                    ? "border-ppc-accent/60 bg-white/10 shadow-[0_16px_40px_-24px_rgba(92,126,232,0.8)]"
+                    : "border-white/10 bg-white/[0.03] hover:border-white/25 hover:bg-white/[0.06]"
+                }`}
+              >
+                <span
+                  className={`mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-[13px] font-semibold transition-all ${
+                    isActive
+                      ? "bg-ppc-accent text-white"
+                      : "bg-white/10 text-white/70"
+                  }`}
+                >
+                  {step.step}
+                </span>
+                <h3 className="font-display text-[20px] leading-tight md:text-[22px]">
+                  {step.title}
+                </h3>
+                <p
+                  className={`mt-2 text-[14px] leading-relaxed transition-colors ${
+                    isActive ? "text-white/80" : "text-white/45"
+                  }`}
+                >
+                  {step.description}
+                </p>
+              </button>
+            );
+          })}
+        </div>
+
+        <Reveal delay={120} variant="scale-in">
+          <div className="group relative overflow-hidden rounded-2xl">
+            <div className="relative min-h-[280px] md:min-h-[460px]">
               <Image
                 key={current.image}
                 src={current.image}
                 alt={current.title}
                 fill
-                className="animate-image-cross object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="animate-image-cross object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                sizes="(max-width: 1024px) 100vw, 1180px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ppc-dark/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ppc-dark via-ppc-dark/20 to-transparent" />
+
+              <button
+                type="button"
+                aria-label="Previous step"
+                onClick={() => go(-1)}
+                className="absolute left-4 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-ppc-dark/55 text-white backdrop-blur-sm hover:bg-ppc-accent md:flex"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                aria-label="Next step"
+                onClick={() => go(1)}
+                className="absolute right-4 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-ppc-dark/55 text-white backdrop-blur-sm hover:bg-ppc-accent md:flex"
+              >
+                ›
+              </button>
+
               <div
                 key={current.step}
-                className="absolute bottom-0 left-0 right-0 animate-fade-up p-6 md:p-8"
+                className="absolute inset-x-0 bottom-0 animate-fade-up p-6 md:p-8"
               >
                 <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-ppc-accent-soft">
-                  Step {current.step}
+                  Step {current.step} of 03
                 </p>
-                <p className="mt-1 font-display text-[24px] md:text-[30px]">
+                <p className="mt-1 font-display text-[26px] md:text-[34px]">
                   {current.title}
                 </p>
               </div>
             </div>
-          </Reveal>
-        </div>
+
+            <div className="flex gap-3 bg-ppc-dark/80 p-3 md:p-4">
+              {howItWorks.map((step, i) => (
+                <button
+                  key={step.step}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Show ${step.title}`}
+                  className={`relative h-16 flex-1 overflow-hidden rounded-xl md:h-20 ${
+                    active === i
+                      ? "ring-2 ring-ppc-accent-soft"
+                      : "opacity-55 hover:opacity-90"
+                  }`}
+                >
+                  <Image
+                    src={step.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="200px"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

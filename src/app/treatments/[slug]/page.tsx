@@ -27,51 +27,51 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const treatment = getTreatment(slug);
-  if (!treatment) return { title: "Treatment — myPPC" };
+  if (!treatment) return { title: "Treatment — medviCare" };
   if (slug === "weight-loss") {
     return {
-      title: "Body Optimization & GLP-1 Weight Loss — myPPC",
+      title: "Body Optimization & GLP-1 Weight Loss — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "hair-loss") {
     return {
-      title: "Stop Hair Loss — Online Care — myPPC",
+      title: "Stop Hair Loss — Online Care — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "skin") {
     return {
-      title: "Prescription Skincare Online — myPPC",
+      title: "Prescription Skincare Online — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "longevity") {
     return {
-      title: "Longevity Program — Live Longer — myPPC",
+      title: "Longevity Program — Live Longer — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "sexual-health") {
     return {
-      title: "Sexual Health — Choose Your Plan — myPPC",
+      title: "Sexual Health — Choose Your Plan — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "mental-health") {
     return {
-      title: "Online Mental Health Care — myPPC",
+      title: "Online Mental Health Care — medviCare",
       description: treatment.summary,
     };
   }
   if (slug === "quit-smoking") {
     return {
-      title: "Quit Smoking with ZONNIC — myPPC",
+      title: "Quit Smoking with ZONNIC — medviCare",
       description: treatment.summary,
     };
   }
   return {
-    title: `${treatment.title} ${treatment.accent} — myPPC`,
+    title: `${treatment.title} ${treatment.accent} — medviCare`,
     description: treatment.summary,
   };
 }
@@ -131,15 +131,16 @@ export default async function TreatmentDetailPage({ params }: Props) {
         cta={{ label: "View medications", href: "/medications" }}
       />
 
-      <section className="px-5 py-10 md:py-14">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section-sm">
+        <div className="site-inner">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 className="font-display text-[24px] text-ppc-primary md:text-[30px]">
                 Available options
               </h2>
-              <p className="mt-1 text-[14px] text-ppc-primary/55">
-                Select a product to learn more. Approval always depends on clinical review.
+              <p className="mt-1 text-[14px] text-ppc-primary/78">
+                Select a product to learn more. Approval always depends on
+                clinical review.
               </p>
             </div>
             <Link
@@ -152,15 +153,15 @@ export default async function TreatmentDetailPage({ params }: Props) {
           {categoryProducts.length ? (
             <ProductCardGrid products={categoryProducts} columns="dense" />
           ) : (
-            <p className="text-[15px] text-ppc-primary/60">
+            <p className="text-[15px] text-ppc-primary/80">
               Options for this path are reviewed during intake.
             </p>
           )}
         </div>
       </section>
 
-      <section className="border-t border-ppc-border bg-ppc-mint px-5 py-14 md:py-20">
-        <div className="mx-auto grid max-w-[1180px] items-center gap-10 md:grid-cols-2">
+      <section className="site-section border-t border-ppc-border bg-ppc-mint">
+        <div className="site-inner grid items-center gap-10 md:grid-cols-2 md:gap-16">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-ppc-surface">
             <Image
               src={`${treatment.image}?v=${media.cutoutVersion}`}

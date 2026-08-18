@@ -31,7 +31,7 @@ export default function MentalHealthPage() {
             <button
               type="button"
               onClick={() => setQuizOpen(true)}
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               Take quiz
             </button>
@@ -39,8 +39,8 @@ export default function MentalHealthPage() {
         </div>
       </FullBleedHero>
 
-      <section className="border-b border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-b border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {trust.map((item) => (
             <p
               key={item}
@@ -53,7 +53,7 @@ export default function MentalHealthPage() {
       </section>
 
       <InteractiveSteps
-        title="How myPPC works"
+        title="How medviCare works"
         description="A simple 3-step process to get you started."
         steps={steps}
       />
@@ -95,8 +95,8 @@ export default function MentalHealthPage() {
         className="border-y border-ppc-border bg-ppc-mint"
       />
 
-      <section className="border-y border-ppc-border bg-ppc-dark px-5 py-14 text-white md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section border-y border-ppc-border bg-ppc-dark text-white">
+        <div className="site-inner">
           <h2 className="mb-3 font-display text-[32px] md:text-[40px]">
             Transparent pricing
           </h2>
@@ -124,12 +124,12 @@ export default function MentalHealthPage() {
         </div>
       </section>
 
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section">
+        <div className="site-prose">
           <h2 className="mb-3 font-display text-[32px] text-ppc-primary md:text-[40px]">
             Your MH questions, answered
           </h2>
-          <p className="mb-8 text-[15px] text-ppc-primary/60">
+          <p className="mb-8 text-[15px] text-ppc-primary/80">
             Frequently asked questions about anxiety and depression care.
           </p>
           <div className="divide-y divide-ppc-border border-y border-ppc-border">
@@ -148,7 +148,7 @@ export default function MentalHealthPage() {
                     <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                   </button>
                   {open ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}

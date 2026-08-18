@@ -30,7 +30,7 @@ export default function SkincarePage() {
           <div className="mt-8">
             <Link
               href="#products"
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               View products
             </Link>
@@ -38,8 +38,8 @@ export default function SkincarePage() {
         </div>
       </FullBleedHero>
 
-      <section className="border-b border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-b border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {trust.map((item) => (
             <p
               key={item}
@@ -51,8 +51,8 @@ export default function SkincarePage() {
         </div>
       </section>
 
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section">
+        <div className="site-inner">
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               Concerns
@@ -80,7 +80,7 @@ export default function SkincarePage() {
                   <h3 className="font-display text-[26px] text-ppc-primary">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-ppc-primary/65">
+                  <p className="mt-2 text-[14px] leading-relaxed text-ppc-primary/82">
                     {item.body}
                   </p>
                   <Link
@@ -102,8 +102,8 @@ export default function SkincarePage() {
         steps={steps}
       />
 
-      <section id="products" className="scroll-mt-[88px] px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section id="products" className="site-section scroll-mt-[88px]">
+        <div className="site-inner">
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               Products
@@ -111,7 +111,7 @@ export default function SkincarePage() {
             <h2 className="font-display text-[32px] text-ppc-primary md:text-[40px]">
               Doctor-trusted formulas
             </h2>
-            <p className="mt-3 text-[15px] text-ppc-primary/60">
+            <p className="mt-3 text-[15px] text-ppc-primary/80">
               Learn more opens a full product page — same style as Anti-Aging Cream.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function SkincarePage() {
                   <h3 className="mt-2 font-display text-[24px] text-ppc-primary">
                     {product.name}
                   </h3>
-                  <p className="mt-2 flex-1 text-[14px] text-ppc-primary/65">
+                  <p className="mt-2 flex-1 text-[14px] text-ppc-primary/82">
                     {product.blurb}
                   </p>
                   {product.priceLabel ? (
@@ -160,8 +160,8 @@ export default function SkincarePage() {
       </section>
 
       <VisualCards
-        eyebrow="Why myPPC"
-        title="Why choose myPPC?"
+        eyebrow="Why medviCare"
+        title="Why choose medviCare?"
         description="Personalized skincare, 100% online — refills, support, and clinician review without the waiting room."
         items={why.map((item, i) => ({
           title: item,
@@ -176,8 +176,8 @@ export default function SkincarePage() {
         className="border-y border-ppc-border bg-ppc-mint"
       />
 
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section">
+        <div className="site-prose">
           <h2 className="mb-8 font-display text-[32px] text-ppc-primary md:text-[40px]">
             Skincare FAQs
           </h2>
@@ -197,7 +197,7 @@ export default function SkincarePage() {
                     <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                   </button>
                   {open ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}

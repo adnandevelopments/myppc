@@ -37,7 +37,7 @@ export default function BodyOptimizationPage() {
           <div className="mt-8">
             <ScrollToSection
               id="options"
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               View options
             </ScrollToSection>
@@ -49,8 +49,8 @@ export default function BodyOptimizationPage() {
       </FullBleedHero>
 
       {/* Trust */}
-      <section className="border-b border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-b border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {trust.map((item) => (
             <p
               key={item}
@@ -63,8 +63,8 @@ export default function BodyOptimizationPage() {
       </section>
 
       {/* Product options */}
-      <section id="options" className="scroll-mt-[88px] px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section id="options" className="site-section scroll-mt-[88px]">
+        <div className="site-inner">
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               Treatment options
@@ -72,7 +72,7 @@ export default function BodyOptimizationPage() {
             <h2 className="font-display text-[32px] text-ppc-primary md:text-[40px]">
               Choose your path
             </h2>
-            <p className="mt-3 text-[15px] text-ppc-primary/60">
+            <p className="mt-3 text-[15px] text-ppc-primary/80">
               Browse clinician-reviewed GLP-1 options. Approval depends on your intake and clinical review.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function BodyOptimizationPage() {
       </section>
 
       <InteractiveSteps
-        title="How myPPC works"
+        title="How medviCare works"
         description="A simple 3-step process to get you started."
         steps={steps}
       />
@@ -102,8 +102,8 @@ export default function BodyOptimizationPage() {
       />
 
       {/* Pricing */}
-      <section className="border-y border-ppc-border bg-ppc-dark px-5 py-14 text-white md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section border-y border-ppc-border bg-ppc-dark text-white">
+        <div className="site-inner">
           <div className="mb-10 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
               Pricing
@@ -137,15 +137,15 @@ export default function BodyOptimizationPage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section">
+        <div className="site-prose">
           <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
             FAQ
           </p>
           <h2 className="mb-3 font-display text-[32px] text-ppc-primary md:text-[40px]">
             Your questions, answered
           </h2>
-          <p className="mb-8 text-[15px] text-ppc-primary/60">
+          <p className="mb-8 text-[15px] text-ppc-primary/80">
             Frequently asked questions about the weight loss program.
           </p>
           <div className="divide-y divide-ppc-border border-y border-ppc-border">
@@ -164,7 +164,7 @@ export default function BodyOptimizationPage() {
                     <span className="text-ppc-accent">{isOpen ? "−" : "+"}</span>
                   </button>
                   {isOpen ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}

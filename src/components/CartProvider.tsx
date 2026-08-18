@@ -31,7 +31,7 @@ type CartContextValue = {
   clear: () => void;
 };
 
-const STORAGE_KEY = "myppc-cart";
+const STORAGE_KEY = "medvicare-cart";
 
 const CartContext = createContext<CartContextValue | null>(null);
 

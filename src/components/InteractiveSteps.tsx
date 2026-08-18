@@ -39,9 +39,9 @@ export default function InteractiveSteps({
     current?.image ?? fallbackImages[active % fallbackImages.length];
   return (
     <section
-      className={`scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint px-5 py-14 md:py-20 ${className}`}
+      className={`site-section scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint ${className}`}
     >
-      <div className="mx-auto max-w-[1180px]">
+      <div className="site-inner">
         <Reveal variant="blur-up">
           <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
             {eyebrow}
@@ -54,7 +54,7 @@ export default function InteractiveSteps({
         </Reveal>
         {description ? (
           <Reveal delay={120}>
-            <p className="mt-3 max-w-lg text-[15px] text-ppc-primary/60">
+            <p className="mt-3 max-w-lg text-[15px] text-ppc-primary/80">
               {description}
             </p>
           </Reveal>
@@ -85,7 +85,7 @@ export default function InteractiveSteps({
                         className={`relative z-10 mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold transition-all duration-300 ${
                           isActive
                             ? "scale-105 bg-ppc-accent text-white"
-                            : "bg-ppc-surface text-ppc-primary/55 ring-1 ring-ppc-border"
+                            : "bg-ppc-surface text-ppc-primary/78 ring-1 ring-ppc-border"
                         }`}
                       >
                         {step.step}
@@ -97,8 +97,8 @@ export default function InteractiveSteps({
                         <p
                           className={`mt-1 text-[14px] leading-relaxed transition-colors duration-300 ${
                             isActive
-                              ? "text-ppc-primary/70"
-                              : "text-ppc-primary/45"
+                              ? "text-ppc-primary/88"
+                              : "text-ppc-primary/72"
                           }`}
                         >
                           {step.body ?? step.description}

@@ -43,14 +43,14 @@ export default function HairLossPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <ScrollToSection
               id="options"
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               View options
             </ScrollToSection>
             <button
               type="button"
               onClick={() => setQuizOpen(true)}
-              className="rounded-md border border-white/25 bg-white/10 px-6 py-3.5 text-[15px] font-medium text-white backdrop-blur-sm hover:bg-white/15"
+              className="rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-[15px] font-medium text-white backdrop-blur-sm hover:bg-white/15"
             >
               Take quiz
             </button>
@@ -62,8 +62,8 @@ export default function HairLossPage() {
       </FullBleedHero>
 
       {/* Trust */}
-      <section className="border-b border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-b border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {trust.map((item) => (
             <p
               key={item}
@@ -78,9 +78,9 @@ export default function HairLossPage() {
       {/* View options — priced offer carousel */}
       <section
         id="options"
-        className="scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint px-5 py-14 md:py-20"
+        className="site-section scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint"
       >
-        <div className="mx-auto max-w-[1180px]">
+        <div className="site-inner">
           <div className="mb-10 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               View options
@@ -88,7 +88,7 @@ export default function HairLossPage() {
             <h2 className="font-display text-[32px] text-ppc-primary md:text-[40px]">
               Stop loss. Support growth.
             </h2>
-            <p className="mt-3 text-[15px] text-ppc-primary/60">
+            <p className="mt-3 text-[15px] text-ppc-primary/80">
               Choose a foam, tablet, or topical pathway. Final approval depends
               on your intake and clinical review.
             </p>
@@ -100,14 +100,14 @@ export default function HairLossPage() {
             <h3 className="font-display text-[24px] text-ppc-primary">
               Not sure what’s right for you?
             </h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-ppc-primary/65">
+            <p className="mt-2 text-[15px] leading-relaxed text-ppc-primary/82">
               Answer a few quick questions and a clinician will help match foam,
               oral, or topical pathways to your stage of hair loss.
             </p>
             <button
               type="button"
               onClick={() => setQuizOpen(true)}
-              className="mt-5 inline-flex rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="mt-5 inline-flex rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               Take quiz
             </button>
@@ -131,7 +131,7 @@ export default function HairLossPage() {
       />
 
       <InteractiveSteps
-        title="How myPPC works"
+        title="How medviCare works"
         description="A simple 3-step process to get you started."
         steps={steps}
       />
@@ -147,8 +147,8 @@ export default function HairLossPage() {
       />
 
       {/* Pricing */}
-      <section className="border-y border-ppc-border bg-ppc-dark px-5 py-14 text-white md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section border-y border-ppc-border bg-ppc-dark text-white">
+        <div className="site-inner">
           <div className="mb-10 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
               Pricing
@@ -187,15 +187,15 @@ export default function HairLossPage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section">
+        <div className="site-prose">
           <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
             FAQ
           </p>
           <h2 className="mb-3 font-display text-[32px] text-ppc-primary md:text-[40px]">
             Your questions, answered
           </h2>
-          <p className="mb-8 text-[15px] text-ppc-primary/60">
+          <p className="mb-8 text-[15px] text-ppc-primary/80">
             Frequently asked questions about hair loss treatment.
           </p>
           <div className="divide-y divide-ppc-border border-y border-ppc-border">
@@ -214,7 +214,7 @@ export default function HairLossPage() {
                     <span className="text-ppc-accent">{isOpen ? "−" : "+"}</span>
                   </button>
                   {isOpen ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}

@@ -7,8 +7,8 @@ import { media } from "@/lib/content";
 
 export default function BlogCTA() {
   return (
-    <section id="blog" className="bg-background px-5 py-16 md:py-20">
-      <div className="mx-auto max-w-[1180px]">
+    <section id="blog" className="site-section bg-background">
+      <div className="site-inner">
         <Reveal variant="scale-in">
           <div className="group grid overflow-hidden rounded-2xl bg-ppc-dark md:grid-cols-[1.1fr_0.9fr]">
             <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
@@ -24,7 +24,7 @@ export default function BlogCTA() {
               </p>
               <Link
                 href="/blog"
-                className="motion-press mt-7 inline-flex w-fit items-center gap-2 rounded-md bg-ppc-accent px-5 py-3 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
+                className="motion-press mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-ppc-accent px-5 py-3 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
               >
                 Explore the journal
                 <span aria-hidden>→</span>
@@ -33,7 +33,7 @@ export default function BlogCTA() {
             <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
               <Image
                 src={media.blogBg}
-                alt="myPPC health notes"
+                alt="medviCare health notes"
                 fill
                 className="motion-image object-cover"
                 sizes="(max-width: 768px) 100vw, 45vw"

@@ -40,118 +40,26 @@
   font-display: swap;
 }
 
-/*
-  Theme system — each preset keeps dark clinical polish but a distinct
-  accent atmosphere (glow, surface depth, border temperature).
-*/
+/* Site theme — Azure (royal blue + pale lavender) */
 :root,
-html[data-theme="cobalt"] {
-  --background: #070c18;
-  --foreground: #e7eefc;
-  --ppc-mint: #0f1729;
-  --ppc-surface: #162238;
-  --ppc-accent: #4f7cff;
-  --ppc-accent-soft: #8aadff;
-  --ppc-primary: #f2f6ff;
-  --ppc-border: #2b3b5c;
-  --ppc-dark: #04070f;
-  --ppc-warm: #141824;
-  --bg-glow: rgba(79, 124, 255, 0.22);
-  --bg-glow-2: rgba(37, 99, 235, 0.12);
-  --bg-glow-3: rgba(147, 197, 253, 0.06);
-  --selection: rgba(79, 124, 255, 0.35);
+html[data-theme="rose"],
+html[data-theme="azure"] {
+  --background: #f4f6fb;
+  --foreground: #121a38;
+  --ppc-mint: #e8edf6;
+  --ppc-surface: #ffffff;
+  --ppc-accent: #3d52a0;
+  --ppc-accent-soft: #5c7ee8;
+  --ppc-primary: #121a38;
+  --ppc-border: #8fa0c4;
+  --ppc-dark: #1a2754;
+  --ppc-warm: #e8edf6;
+  --bg-glow: rgba(61, 82, 160, 0.07);
+  --bg-glow-2: rgba(92, 126, 232, 0.06);
+  --bg-glow-3: rgba(173, 187, 218, 0.12);
+  --selection: rgba(112, 145, 230, 0.32);
   --font-display: "Fellix", "Helvetica Now Display", sans-serif;
   --font-body: "Helvetica Now Text", "Fellix", sans-serif;
-}
-
-/* Forest — deep moss + jade */
-html[data-theme="forest"] {
-  --background: #06110e;
-  --foreground: #e4f5ee;
-  --ppc-mint: #0c1c18;
-  --ppc-surface: #123028;
-  --ppc-accent: #1ec9a2;
-  --ppc-accent-soft: #5ee9c5;
-  --ppc-primary: #effff8;
-  --ppc-border: #25483d;
-  --ppc-dark: #030a08;
-  --ppc-warm: #121816;
-  --bg-glow: rgba(30, 201, 162, 0.2);
-  --bg-glow-2: rgba(13, 148, 136, 0.12);
-  --bg-glow-3: rgba(167, 243, 208, 0.05);
-  --selection: rgba(30, 201, 162, 0.32);
-}
-
-/* Ember — charcoal + copper */
-html[data-theme="ember"] {
-  --background: #100b08;
-  --foreground: #f7ebe2;
-  --ppc-mint: #1a130f;
-  --ppc-surface: #281c15;
-  --ppc-accent: #f0752d;
-  --ppc-accent-soft: #ffb070;
-  --ppc-primary: #fff6ee;
-  --ppc-border: #433024;
-  --ppc-dark: #080504;
-  --ppc-warm: #201610;
-  --bg-glow: rgba(240, 117, 45, 0.2);
-  --bg-glow-2: rgba(180, 83, 9, 0.12);
-  --bg-glow-3: rgba(253, 186, 116, 0.06);
-  --selection: rgba(240, 117, 45, 0.32);
-}
-
-/* Ocean — midnight teal + aqua */
-html[data-theme="ocean"] {
-  --background: #051116;
-  --foreground: #e4f7fb;
-  --ppc-mint: #0b1c23;
-  --ppc-surface: #12313b;
-  --ppc-accent: #2ad4ef;
-  --ppc-accent-soft: #7eecff;
-  --ppc-primary: #f0fdff;
-  --ppc-border: #25505c;
-  --ppc-dark: #03090c;
-  --ppc-warm: #10181a;
-  --bg-glow: rgba(42, 212, 239, 0.18);
-  --bg-glow-2: rgba(6, 182, 212, 0.12);
-  --bg-glow-3: rgba(165, 243, 252, 0.05);
-  --selection: rgba(42, 212, 239, 0.3);
-}
-
-/* Rose — wine + soft coral */
-html[data-theme="rose"] {
-  --background: #12070c;
-  --foreground: #fcecef;
-  --ppc-mint: #1d1016;
-  --ppc-surface: #2c1620;
-  --ppc-accent: #e84b6a;
-  --ppc-accent-soft: #ff8aa3;
-  --ppc-primary: #fff2f5;
-  --ppc-border: #4a2433;
-  --ppc-dark: #090306;
-  --ppc-warm: #181014;
-  --bg-glow: rgba(232, 75, 106, 0.2);
-  --bg-glow-2: rgba(159, 18, 57, 0.12);
-  --bg-glow-3: rgba(253, 164, 175, 0.06);
-  --selection: rgba(232, 75, 106, 0.32);
-}
-
-/* Harbor — slate + ice blue */
-html[data-theme="harbor"] {
-  --background: #081018;
-  --foreground: #e7eef5;
-  --ppc-mint: #101a24;
-  --ppc-surface: #172533;
-  --ppc-accent: #4cc3f5;
-  --ppc-accent-soft: #9adcff;
-  --ppc-primary: #f3f9fd;
-  --ppc-border: #2a3c4f;
-  --ppc-dark: #04080c;
-  --ppc-warm: #12161a;
-  --bg-glow: rgba(76, 195, 245, 0.18);
-  --bg-glow-2: rgba(14, 116, 144, 0.12);
-  --bg-glow-3: rgba(186, 230, 253, 0.05);
-  --selection: rgba(76, 195, 245, 0.3);
 }
 
 @theme inline {
@@ -256,26 +164,59 @@ html[data-theme="harbor"] {
 
 html,
 body {
-  overflow-x: hidden;
+  /* clip does not create a nested scrollport (hidden does, and traps the wheel) */
+  overflow-x: clip;
   max-width: 100%;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
+}
+
+/* Shared page grid — same max-width + gutter as the header */
+.site-inner {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 73.75rem;
+  padding-inline: clamp(1.25rem, 4.5vw, 2.5rem);
+}
+
+.site-section {
+  padding-block: clamp(4.25rem, 7.5vw, 7.25rem);
+}
+
+.site-section-sm {
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.site-prose {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 52rem;
+  padding-inline: clamp(1.25rem, 4.5vw, 2.5rem);
 }
 
 body {
+  isolation: isolate;
   background-color: var(--background);
-  background-image:
-    radial-gradient(ellipse 95% 60% at 100% -8%, var(--bg-glow), transparent 58%),
-    radial-gradient(ellipse 70% 50% at -8% 108%, var(--bg-glow-2), transparent 52%),
-    radial-gradient(ellipse 55% 40% at 50% 50%, var(--bg-glow-3), transparent 70%);
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-body);
   transition:
     background-color 0.4s ease,
     color 0.3s ease;
+}
+
+/* Fixed glow without background-attachment:fixed — that pairing janks scroll on Windows */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 95% 60% at 100% -8%, var(--bg-glow), transparent 58%),
+    radial-gradient(ellipse 70% 50% at -8% 108%, var(--bg-glow-2), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 50%, var(--bg-glow-3), transparent 70%);
 }
 
 ::selection {
@@ -289,6 +230,9 @@ body {
   transition-property: opacity, transform, filter;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   transition-duration: 800ms;
+}
+
+.reveal:not(.is-visible) {
   will-change: opacity, transform;
 }
 
@@ -372,7 +316,29 @@ body {
   animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* CTA polish — Explore care style */
+a.motion-press,
+button.motion-press {
+  border-radius: 9999px;
+}
+
 /* Interactive polish */
+a,
+button {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ppc-accent);
+  outline-offset: 3px;
+}
+
 .motion-card {
   transition:
     transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
@@ -382,8 +348,8 @@ body {
 }
 
 .motion-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 44px -16px rgba(61, 82, 160, 0.38);
 }
 
 .motion-press {
@@ -396,6 +362,7 @@ body {
 
 .motion-press:hover {
   transform: translateY(-1px);
+  filter: brightness(1.06);
 }
 
 .motion-press:active {
@@ -478,6 +445,18 @@ body {
 
 .animate-cursor-blink {
   animation: var(--animate-cursor-blink);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):not([type="file"]),
+textarea,
+select {
+  transition: border-color 0.2s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):not([type="file"]):hover,
+textarea:hover,
+select:hover {
+  border-color: var(--ppc-accent);
 }
 
 .grain {

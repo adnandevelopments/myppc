@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HairLossPage from "@/components/HairLossPage";
 
 export const metadata: Metadata = {
-  title: "Stop Hair Loss — Online Care — myPPC",
+  title: "Stop Hair Loss — Online Care — medviCare",
   description:
     "Clinician-reviewed hair loss treatments online: foam, oral, and topical pathways with discreet delivery and ongoing support.",
 };

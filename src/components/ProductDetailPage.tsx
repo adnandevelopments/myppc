@@ -101,8 +101,8 @@ export default function ProductDetailPage({
         </div>
       </FullBleedHero>
 
-      <section className="px-5 py-10 md:py-14">
-        <div className="mx-auto max-w-[800px] divide-y divide-ppc-border border-y border-ppc-border">
+      <section className="site-section-sm">
+        <div className="site-prose divide-y divide-ppc-border border-y border-ppc-border">
           {panels.map((panel) => {
             const open = openPanel === panel.id;
             return (
@@ -118,7 +118,7 @@ export default function ProductDetailPage({
                   <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                 </button>
                 {open ? (
-                  <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                  <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                     {panel.body}
                   </p>
                 ) : null}
@@ -163,8 +163,8 @@ export default function ProductDetailPage({
       />
 
       <VisualCards
-        eyebrow="Why myPPC"
-        title="Why myPPC"
+        eyebrow="Why medviCare"
+        title="Why medviCare"
         items={detail.why.map((item, i) => ({
           title: item.title,
           body: item.points.join(" · "),
@@ -176,12 +176,12 @@ export default function ProductDetailPage({
         }))}
       />
 
-      <section className="border-y border-ppc-border bg-ppc-mint px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section border-y border-ppc-border bg-ppc-mint">
+        <div className="site-prose">
           <h2 className="mb-3 font-display text-[32px] text-ppc-primary md:text-[40px]">
             Your questions, answered
           </h2>
-          <p className="mb-8 text-[15px] text-ppc-primary/60">
+          <p className="mb-8 text-[15px] text-ppc-primary/80">
             Frequently asked questions about {product.name}.
           </p>
           <div className="divide-y divide-ppc-border border-y border-ppc-border">
@@ -200,7 +200,7 @@ export default function ProductDetailPage({
                     <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                   </button>
                   {open ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}
@@ -212,8 +212,8 @@ export default function ProductDetailPage({
       </section>
 
       {related.length ? (
-        <section className="border-t border-ppc-border px-5 py-12 md:py-16">
-          <div className="mx-auto max-w-[1180px]">
+        <section className="site-section-sm border-t border-ppc-border">
+          <div className="site-inner">
             <h2 className="mb-6 font-display text-[24px] text-ppc-primary md:text-[30px]">
               More options
             </h2>

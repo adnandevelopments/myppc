@@ -14,10 +14,10 @@ export function productMetadata(slug: string) {
   const product = getProduct(slug);
   const detail = getProductDetail(slug);
   if (!product || !detail) {
-    return { title: "Medication — myPPC" };
+    return { title: "Medication — medviCare" };
   }
   return {
-    title: `${detail.headline} — myPPC`,
+    title: `${detail.headline} — medviCare`,
     description: detail.description,
   };
 }

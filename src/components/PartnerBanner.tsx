@@ -4,7 +4,7 @@ export default function PartnerBanner() {
   const items = [...partners, ...partners, ...partners, ...partners];
 
   return (
-    <div className="bg-ppc-dark text-white overflow-hidden h-10 md:h-11 flex items-center">
+    <div className="bg-ppc-dark text-white overflow-x-clip h-10 md:h-11 flex items-center">
       <div className="animate-marquee flex whitespace-nowrap items-center min-w-max">
         {items.map((name, i) => (
           <div key={`${name}-${i}`} className="flex items-center">

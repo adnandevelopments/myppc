@@ -16,7 +16,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="space-y-4 rounded-2xl border border-ppc-border bg-ppc-surface p-6 md:p-8"
+      className="space-y-4 rounded-2xl border border-ppc-border bg-ppc-surface p-6 shadow-[0_16px_40px_-28px_rgba(18,26,56,0.35)] md:p-10"
       onSubmit={(e) => {
         e.preventDefault();
         setSent(true);
@@ -26,7 +26,7 @@ export default function ContactForm() {
         <h2 className="font-display text-[26px] text-ppc-primary md:text-[30px]">
           Send a message
         </h2>
-        <p className="mt-1 text-[14px] text-ppc-primary/55">
+        <p className="mt-1 text-[14px] text-ppc-primary/78">
           We typically reply within one business day.
         </p>
       </div>
@@ -36,7 +36,7 @@ export default function ContactForm() {
           <p className="text-[15px] font-medium text-ppc-primary">
             Thanks — your message is ready to send.
           </p>
-          <p className="mt-1 text-[13px] text-ppc-primary/60">
+          <p className="mt-1 text-[13px] text-ppc-primary/80">
             This demo form doesn’t transmit yet. For now, email us directly and
             we’ll help from there.
           </p>
@@ -52,7 +52,7 @@ export default function ContactForm() {
         <>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block">
-              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/60">
+              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/80">
                 Full name
               </span>
               <input
@@ -60,11 +60,11 @@ export default function ContactForm() {
                 required
                 name="name"
                 placeholder="Alex Morgan"
-                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none focus:border-ppc-accent"
+                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
               />
             </label>
             <label className="block">
-              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/60">
+              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/80">
                 Email
               </span>
               <input
@@ -72,32 +72,32 @@ export default function ContactForm() {
                 required
                 name="email"
                 placeholder="you@email.com"
-                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none focus:border-ppc-accent"
+                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
               />
             </label>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block">
-              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/60">
+              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/80">
                 Phone (optional)
               </span>
               <input
                 type="tel"
                 name="phone"
                 placeholder="+1"
-                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none focus:border-ppc-accent"
+                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
               />
             </label>
             <label className="block">
-              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/60">
+              <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/80">
                 Topic
               </span>
               <select
                 name="topic"
                 required
                 defaultValue=""
-                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none focus:border-ppc-accent"
+                className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
               >
                 <option value="" disabled>
                   Select a topic
@@ -112,7 +112,7 @@ export default function ContactForm() {
           </div>
 
           <label className="block">
-            <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/60">
+            <span className="mb-1.5 block text-[12px] font-medium text-ppc-primary/80">
               How can we help?
             </span>
             <textarea
@@ -120,13 +120,13 @@ export default function ContactForm() {
               required
               placeholder="Share a few details so we can route your note to the right team."
               rows={5}
-              className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none focus:border-ppc-accent"
+              className="w-full rounded-md border border-ppc-border bg-background px-4 py-3 text-sm text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
             />
           </label>
 
           <button
             type="submit"
-            className="w-full rounded-md bg-ppc-accent px-5 py-3.5 text-[14px] font-medium text-white hover:bg-ppc-accent-soft sm:w-auto"
+            className="w-full rounded-full bg-ppc-accent px-5 py-3.5 text-[14px] font-medium text-white hover:bg-ppc-accent-soft sm:w-auto"
           >
             Submit message
           </button>

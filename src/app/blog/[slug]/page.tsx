@@ -13,8 +13,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
-  if (!post) return { title: "Health note — myPPC" };
-  return { title: `${post.title} — myPPC`, description: post.excerpt };
+  if (!post) return { title: "Health note — medviCare" };
+  return { title: `${post.title} — medviCare`, description: post.excerpt };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -31,15 +31,17 @@ export default async function BlogPostPage({ params }: Props) {
         image={media.pageHeroes.blog}
         cta={{ label: "All notes", href: "/blog" }}
       />
-      <section className="px-5 py-12 md:py-16">
-        <article className="mx-auto max-w-[720px] space-y-5 text-[16px] leading-relaxed text-ppc-primary/70">
+      <section className="site-section">
+        <article className="site-prose space-y-5 text-[16px] leading-relaxed text-ppc-primary/88">
           <p>
-            This note is part of the myPPC health journal — practical guidance to help
-            you make clearer decisions around private, clinician-guided care.
+            This note is part of the medviCare health journal — practical guidance
+            to help you make clearer decisions around private, clinician-guided
+            care.
           </p>
           <p>
-            {post.excerpt} If you are exploring a care path, start with a short intake
-            so a licensed clinician can review whether a plan is appropriate for you.
+            {post.excerpt} If you are exploring a care path, start with a short
+            intake so a licensed clinician can review whether a plan is
+            appropriate for you.
           </p>
           <p>
             Have questions about a specific treatment? Browse our{" "}

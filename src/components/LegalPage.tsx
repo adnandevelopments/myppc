@@ -24,19 +24,19 @@ export default function LegalPage({
         description={`Last updated: ${updated}`}
         image={media.pageHeroes.legal}
       />
-      <section className="px-5 py-12 md:py-16">
-        <div className="mx-auto max-w-[800px] space-y-8">
+      <section className="site-section">
+        <div className="site-prose space-y-8">
           {blocks.map((block) => (
             <div key={block.heading}>
               <h2 className="mb-2 text-[20px] font-semibold text-ppc-primary">
                 {block.heading}
               </h2>
-              <p className="text-[15px] leading-relaxed text-ppc-primary/65">
+              <p className="text-[15px] leading-relaxed text-ppc-primary/82">
                 {block.body}
               </p>
             </div>
           ))}
-          <p className="border-t border-ppc-border pt-6 text-[14px] text-ppc-primary/55">
+          <p className="border-t border-ppc-border pt-6 text-[14px] text-ppc-primary/78">
             Questions? Contact{" "}
             <Link href={`mailto:${brand.email}`} className="text-ppc-accent">
               {brand.email}

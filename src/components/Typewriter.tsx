@@ -12,7 +12,7 @@ type TypewriterProps = {
 export default function Typewriter({
   staticText,
   words,
-  accentColor = "#1FA97A",
+  accentColor = "#3D52A0",
   className = "",
 }: TypewriterProps) {
   const [wordIndex, setWordIndex] = useState(0);

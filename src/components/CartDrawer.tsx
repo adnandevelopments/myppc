@@ -41,14 +41,14 @@ export default function CartDrawer() {
         <div className="flex items-center justify-between border-b border-ppc-border px-5 py-4">
           <div>
             <p className="font-display text-[26px] text-ppc-primary">Cart</p>
-            <p className="text-[12px] text-ppc-primary/50">
+            <p className="text-[12px] text-ppc-primary/75">
               {count === 0 ? "No items yet" : `${count} item${count === 1 ? "" : "s"}`}
             </p>
           </div>
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ppc-border text-ppc-primary hover:bg-ppc-mint"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ppc-border text-ppc-primary hover:bg-ppc-mint"
             aria-label="Close cart"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -68,13 +68,13 @@ export default function CartDrawer() {
               <p className="text-[15px] font-medium text-ppc-primary">
                 Your cart is empty
               </p>
-              <p className="mt-2 text-[13px] text-ppc-primary/55">
+              <p className="mt-2 text-[13px] text-ppc-primary/78">
                 Browse hair loss options and add a plan to continue.
               </p>
               <Link
                 href="/hairloss#options"
                 onClick={() => setOpen(false)}
-                className="mt-5 inline-flex rounded-md bg-ppc-accent px-4 py-2.5 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
+                className="mt-5 inline-flex rounded-full bg-ppc-accent px-4 py-2.5 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
               >
                 View options
               </Link>
@@ -106,7 +106,7 @@ export default function CartDrawer() {
                     <p className="mt-1 text-[14px] font-medium text-ppc-primary">
                       {item.price}
                       {item.compareAt ? (
-                        <span className="ml-2 text-[12px] text-ppc-primary/40 line-through">
+                        <span className="ml-2 text-[12px] text-ppc-primary/70 line-through">
                           {item.compareAt}
                         </span>
                       ) : null}
@@ -133,7 +133,7 @@ export default function CartDrawer() {
                       </button>
                       <button
                         type="button"
-                        className="ml-auto text-[12px] text-ppc-primary/45 hover:text-ppc-accent"
+                        className="ml-auto text-[12px] text-ppc-primary/72 hover:text-ppc-accent"
                         onClick={() => removeItem(item.id)}
                       >
                         Remove
@@ -148,12 +148,12 @@ export default function CartDrawer() {
 
         <div className="border-t border-ppc-border bg-ppc-mint/60 px-5 py-4">
           <div className="mb-3 flex items-center justify-between text-[14px]">
-            <span className="text-ppc-primary/60">Estimated total</span>
+            <span className="text-ppc-primary/80">Estimated total</span>
             <span className="font-semibold text-ppc-primary">
               {formatCartTotal(items)}
             </span>
           </div>
-          <p className="mb-3 text-[11px] leading-relaxed text-ppc-primary/45">
+          <p className="mb-3 text-[11px] leading-relaxed text-ppc-primary/72">
             Checkout starts a clinical intake. Medication is only dispensed if a
             licensed clinician approves.
           </p>
@@ -161,7 +161,7 @@ export default function CartDrawer() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-md bg-ppc-accent px-4 py-3 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="inline-flex items-center justify-center rounded-full bg-ppc-accent px-4 py-3 text-[14px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               Continue
             </Link>
@@ -169,7 +169,7 @@ export default function CartDrawer() {
               <button
                 type="button"
                 onClick={clear}
-                className="text-[13px] text-ppc-primary/50 hover:text-ppc-primary"
+                className="text-[13px] text-ppc-primary/75 hover:text-ppc-primary"
               >
                 Clear cart
               </button>

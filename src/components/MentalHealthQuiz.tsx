@@ -182,7 +182,7 @@ export default function MentalHealthQuiz({
           <button
             type="button"
             onClick={goBack}
-            className="absolute left-0 inline-flex h-10 w-10 items-center justify-center text-ppc-primary/70 hover:text-ppc-accent"
+            className="absolute left-0 inline-flex h-10 w-10 items-center justify-center text-ppc-primary/88 hover:text-ppc-accent"
             aria-label="Back"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -196,13 +196,13 @@ export default function MentalHealthQuiz({
             </svg>
           </button>
           <p className="font-display text-[26px] font-semibold tracking-tight">
-            <span className="text-ppc-primary">my</span>
-            <span className="text-ppc-accent">PPC</span>
+            <span className="text-ppc-primary">medvi</span>
+            <span className="text-ppc-accent-soft">Care</span>
           </p>
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-0 text-[13px] font-medium text-ppc-primary/45 hover:text-ppc-primary"
+            className="absolute right-0 text-[13px] font-medium text-ppc-primary/72 hover:text-ppc-primary"
           >
             Close
           </button>
@@ -238,7 +238,7 @@ export default function MentalHealthQuiz({
                   setBirthday(e.target.value);
                   setError("");
                 }}
-                className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 text-[16px] text-ppc-primary outline-none focus:border-ppc-accent [color-scheme:dark]"
+                className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 text-[16px] text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent [color-scheme:light]"
               />
             </label>
 
@@ -254,7 +254,7 @@ export default function MentalHealthQuiz({
                   setProvince(e.target.value);
                   setError("");
                 }}
-                className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 text-[16px] text-ppc-primary outline-none focus:border-ppc-accent"
+                className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 text-[16px] text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent"
               >
                 <option value="">Select your province</option>
                 {MH_PROVINCES.map((p) => (
@@ -273,7 +273,7 @@ export default function MentalHealthQuiz({
               type="button"
               onClick={submitEligibility}
               disabled={!birthday || !province}
-              className="mt-4 w-full rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white transition hover:bg-ppc-accent-soft disabled:cursor-not-allowed disabled:bg-ppc-mint disabled:text-ppc-primary/35"
+              className="mt-4 w-full rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white transition hover:bg-ppc-accent-soft disabled:cursor-not-allowed disabled:bg-ppc-mint disabled:text-ppc-primary/70"
             >
               Continue
             </button>
@@ -310,7 +310,7 @@ export default function MentalHealthQuiz({
                 ? "Must be 18 years old or above"
                 : "Service isn’t available in your province yet"}
             </h1>
-            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/65">
+            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/82">
               {step.reason === "age"
                 ? "Mental health care through this pathway is only available for adults 18+."
                 : "We currently support Alberta, British Columbia, Manitoba, Ontario, Quebec, and Saskatchewan."}
@@ -333,7 +333,7 @@ export default function MentalHealthQuiz({
             <h1 className="font-display text-[28px] font-[400] text-ppc-primary md:text-[32px]">
               You’re ready for a clinician review
             </h1>
-            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/65">
+            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/82">
               Based on your answers, a licensed clinician can review{" "}
               {concernLabel}
               {answers.province ? ` for ${answers.province}` : ""}. Next, send a
@@ -351,7 +351,7 @@ export default function MentalHealthQuiz({
         ) : null}
 
         <div className="mt-auto pt-10">
-          <p className="text-center text-[11px] leading-relaxed text-ppc-primary/40">
+          <p className="text-center text-[11px] leading-relaxed text-ppc-primary/70">
             We respect your privacy. All of your information is securely stored
             on our PIPEDA Compliant server.
           </p>

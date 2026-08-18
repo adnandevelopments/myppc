@@ -33,7 +33,7 @@ export const sexualHealth = {
     {
       id: "cialis",
       title: "Cialis",
-      image: "/images/med1.png",
+      image: "/images/meds/med-cialis.png",
       dosages: "Available in: 10mg & 20mg",
       pillOptions: [6, 8, 12],
       baseGeneric: 107,
@@ -44,7 +44,7 @@ export const sexualHealth = {
     {
       id: "viagra",
       title: "Viagra",
-      image: "/images/med2.png",
+      image: "/images/meds/med-viagra.png",
       dosages: "Available in: 50mg & 100mg",
       pillOptions: [6, 8, 12],
       baseGeneric: 84,
@@ -55,7 +55,7 @@ export const sexualHealth = {
     {
       id: "dissolvable-cialis",
       title: "Dissolvable Cialis",
-      image: "/images/med3.png",
+      image: "/images/meds/med-chewalis.png",
       dosages: "Available in: 10mg & 20mg",
       pillOptions: [6, 8, 12],
       baseGeneric: 107,
@@ -66,7 +66,7 @@ export const sexualHealth = {
     {
       id: "cialis-viagra",
       title: "Cialis + Viagra",
-      image: "/images/med1.png",
+      image: "/images/meds/med-cialis.png",
       dosages: "*Subject to patient consultation",
       pillOptions: [4, 6],
       pillLabels: ["4/4", "6/6"],

@@ -31,7 +31,7 @@ export default function SectionInView({
       className={className}
       initial={initial}
       whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-      viewport={{ once: false, amount: 0.18 }}
+      viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.7, delay }}
     >
       {children}

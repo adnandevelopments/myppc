@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — myPPC",
+  title: "Terms & Conditions — medviCare",
 };
 
 export default function TermsPage() {
@@ -12,12 +12,12 @@ export default function TermsPage() {
       updated="August 13, 2026"
       blocks={[
         {
-          heading: "Using myPPC",
-          body: "By accessing myPPC you agree to use the platform for lawful personal healthcare purposes and to provide accurate information during intake so clinicians can review your care safely.",
+          heading: "Using medviCare",
+          body: "By accessing medviCare you agree to use the platform for lawful personal healthcare purposes and to provide accurate information during intake so clinicians can review your care safely.",
         },
         {
           heading: "Clinical services",
-          body: "myPPC facilitates connections with licensed clinicians and pharmacy partners. Treatment decisions are made by healthcare professionals based on your submitted information and applicable clinical judgment.",
+          body: "medviCare facilitates connections with licensed clinicians and pharmacy partners. Treatment decisions are made by healthcare professionals based on your submitted information and applicable clinical judgment.",
         },
         {
           heading: "Accounts & communication",
@@ -25,7 +25,7 @@ export default function TermsPage() {
         },
         {
           heading: "Limitations",
-          body: "myPPC does not replace emergency care. If you experience a medical emergency, seek urgent local medical help immediately.",
+          body: "medviCare does not replace emergency care. If you experience a medical emergency, seek urgent local medical help immediately.",
         },
       ]}
     />

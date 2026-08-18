@@ -74,7 +74,7 @@ function MotionDiv({
     transitionDuration: `${duration}s`,
     transitionDelay: `${delay}s`,
     transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-    willChange: "opacity, transform",
+    willChange: reduceMotion || visible ? "auto" : "opacity, transform",
   };
 
   return (

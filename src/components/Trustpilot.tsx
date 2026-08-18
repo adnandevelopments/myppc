@@ -8,8 +8,8 @@ export default function Trustpilot() {
   const rest = reviews.slice(1);
 
   return (
-    <section id="reviews" className="bg-background px-5 py-16 md:py-24">
-      <div className="mx-auto max-w-[1180px]">
+    <section id="reviews" className="site-section bg-background">
+      <div className="site-inner">
         <div className="mb-12 grid gap-6 md:mb-16 md:grid-cols-[1fr_1fr] md:items-end">
           <Reveal variant="blur-up">
             <div>
@@ -17,7 +17,7 @@ export default function Trustpilot() {
                 Patient voices
               </p>
               <h2 className="font-display text-[32px] font-[400] leading-[1.1] tracking-[-0.02em] text-ppc-primary md:text-[44px]">
-                Patients rate myPPC highly for clarity and care
+                Patients rate medviCare highly for clarity and care
               </h2>
             </div>
           </Reveal>
@@ -25,9 +25,9 @@ export default function Trustpilot() {
             <div className="md:justify-self-end md:text-right">
               <p className="text-[28px] font-semibold tracking-tight text-ppc-primary md:text-[36px]">
                 4.3
-                <span className="text-[16px] font-medium text-ppc-primary/45"> / 5</span>
+                <span className="text-[16px] font-medium text-ppc-primary/72"> / 5</span>
               </p>
-              <p className="mt-1 text-[14px] text-ppc-primary/55">
+              <p className="mt-1 text-[14px] text-ppc-primary/78">
                 Based on 1,274 reviews
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function Trustpilot() {
           </blockquote>
         </Reveal>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {rest.map((review, i) => (
             <Reveal key={review.title + review.name} delay={140 + i * 70} variant="rise">
               <article className="motion-card flex h-full flex-col rounded-xl border border-ppc-border bg-ppc-surface p-5">
@@ -57,10 +57,10 @@ export default function Trustpilot() {
                 <h3 className="mb-2 text-[15px] font-semibold text-ppc-primary">
                   {review.title}
                 </h3>
-                <p className="flex-1 text-[14px] leading-relaxed text-ppc-primary/65">
+                <p className="flex-1 text-[14px] leading-relaxed text-ppc-primary/82">
                   {review.body}
                 </p>
-                <p className="mt-4 text-[13px] text-ppc-primary/45">{review.name}</p>
+                <p className="mt-4 text-[13px] text-ppc-primary/72">{review.name}</p>
               </article>
             </Reveal>
           ))}

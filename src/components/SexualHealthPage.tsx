@@ -30,7 +30,7 @@ export default function SexualHealthPage() {
           <div className="mt-8">
             <ScrollToSection
               id="plans"
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               Choose your plan
             </ScrollToSection>
@@ -38,8 +38,8 @@ export default function SexualHealthPage() {
         </div>
       </FullBleedHero>
 
-      <section className="border-b border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-b border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {trust.map((item) => (
             <p
               key={item}
@@ -54,9 +54,9 @@ export default function SexualHealthPage() {
       {/* Choose your plan */}
       <section
         id="plans"
-        className="scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint px-5 py-14 md:py-20"
+        className="site-section scroll-mt-[88px] border-y border-ppc-border bg-ppc-mint"
       >
-        <div className="mx-auto max-w-[1180px]">
+        <div className="site-inner">
           <div className="mb-8 text-center">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               Plans
@@ -64,7 +64,7 @@ export default function SexualHealthPage() {
             <h2 className="font-display text-[34px] text-ppc-primary md:text-[44px]">
               Choose Your Plan
             </h2>
-            <p className="mt-2 text-[15px] text-ppc-primary/55">
+            <p className="mt-2 text-[15px] text-ppc-primary/78">
               Pause or cancel at any time
             </p>
           </div>
@@ -74,8 +74,8 @@ export default function SexualHealthPage() {
 
       <InteractiveSteps title="How it works" steps={steps} />
 
-      <section className="px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[1180px]">
+      <section className="site-section">
+        <div className="site-inner">
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
               Catalog
@@ -88,8 +88,8 @@ export default function SexualHealthPage() {
         </div>
       </section>
 
-      <section className="border-t border-ppc-border bg-ppc-mint px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[900px]">
+      <section className="site-section border-t border-ppc-border bg-ppc-mint">
+        <div className="site-prose">
           <h2 className="mb-8 font-display text-[32px] text-ppc-primary md:text-[40px]">
             FAQs
           </h2>
@@ -109,7 +109,7 @@ export default function SexualHealthPage() {
                     <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                   </button>
                   {open ? (
-                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                       {item.a}
                     </p>
                   ) : null}

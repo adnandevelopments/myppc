@@ -9,7 +9,7 @@ export const quitSmoking = {
     ],
     warning:
       "WARNING: This product contains nicotine. Nicotine is highly addictive. This product is intended for smoking cessation only. Do not use if you are under 19 years of age.",
-    image: "/images/cutouts/habit.png",
+    image: "/images/meds/med-zonnic.png",
     howToImage: "/images/habit.jpg",
     pricePerTin: 12.5,
   },

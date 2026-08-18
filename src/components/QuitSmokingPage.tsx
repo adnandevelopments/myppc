@@ -39,7 +39,7 @@ function OptionChip({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-md border px-4 py-2.5 text-[14px] transition ${
+      className={`rounded-full border px-4 py-2.5 text-[14px] transition ${
         selected
           ? "border-ppc-primary bg-ppc-surface font-medium text-ppc-primary shadow-[inset_0_0_0_1px_var(--ppc-primary)]"
           : "border-ppc-border bg-ppc-surface text-ppc-primary/75 hover:border-ppc-primary/40"
@@ -96,7 +96,7 @@ export default function QuitSmokingPage() {
           <div className="mt-8">
             <ScrollToSection
               id="buy"
-              className="rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="rounded-full bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
             >
               Shop ZONNIC
             </ScrollToSection>
@@ -105,8 +105,8 @@ export default function QuitSmokingPage() {
       </FullBleedHero>
 
       {/* PDP — matches myrocky.ca/product/zonnic */}
-      <section id="buy" className="scroll-mt-[88px] bg-ppc-bg px-5 py-10 md:py-14">
-        <div className="mx-auto grid max-w-[1180px] items-start gap-10 lg:grid-cols-2 lg:gap-14">
+      <section id="buy" className="site-section-sm scroll-mt-[88px] bg-ppc-bg">
+        <div className="site-inner grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="overflow-hidden rounded-2xl bg-ppc-mint">
             <div className="relative aspect-square w-full">
               <Image
@@ -128,10 +128,10 @@ export default function QuitSmokingPage() {
             <h2 className="font-display text-[34px] leading-[1.1] tracking-[-0.02em] text-ppc-primary md:text-[44px]">
               {quitSmoking.product.title}
             </h2>
-            <p className="mt-3 text-[15px] text-ppc-primary/70">
+            <p className="mt-3 text-[15px] text-ppc-primary/88">
               {quitSmoking.product.packageLine}
             </p>
-            <div className="mt-5 space-y-3 text-[15px] leading-relaxed text-ppc-primary/65">
+            <div className="mt-5 space-y-3 text-[15px] leading-relaxed text-ppc-primary/82">
               {quitSmoking.product.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -177,7 +177,7 @@ export default function QuitSmokingPage() {
               Price per tin:{" "}
               <span className="font-semibold">{pricePerTin}</span>
             </p>
-            <p className="mt-1 text-[14px] text-ppc-primary/55">
+            <p className="mt-1 text-[14px] text-ppc-primary/78">
               Total · {pack.label} · {frequency.name}:{" "}
               <span className="font-medium text-ppc-primary">{total}</span>
             </p>
@@ -201,8 +201,8 @@ export default function QuitSmokingPage() {
         </div>
       </section>
 
-      <section className="border-y border-ppc-border bg-ppc-mint px-5 py-5">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3">
+      <section className="border-y border-ppc-border bg-ppc-mint py-6 md:py-7">
+        <div className="site-inner flex flex-wrap items-center justify-between gap-3 sm:gap-6">
           {quitSmoking.trust.map((item) => (
             <p
               key={item}
@@ -241,7 +241,7 @@ export default function QuitSmokingPage() {
                   <span className="text-ppc-accent">{open ? "−" : "+"}</span>
                 </button>
                 {open ? (
-                  <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/65">
+                  <p className="pb-5 text-[15px] leading-relaxed text-ppc-primary/82">
                     {panel.body}
                   </p>
                 ) : null}
@@ -284,7 +284,7 @@ export default function QuitSmokingPage() {
         <h2 className="mb-3 font-display text-[32px] text-ppc-primary md:text-[40px]">
           Ingredients explained
         </h2>
-        <p className="mb-8 max-w-xl text-[15px] text-ppc-primary/60">
+        <p className="mb-8 max-w-xl text-[15px] text-ppc-primary/80">
           High-quality ingredients only: water, plant-based fibres, flavouring,
           sweetener, and nicotine. No tobacco.
         </p>
@@ -306,7 +306,7 @@ export default function QuitSmokingPage() {
             {quitSmoking.dosing.map((line) => (
               <li
                 key={line}
-                className="text-[14px] text-ppc-primary/70 before:mr-2 before:text-ppc-accent before:content-['•']"
+                className="text-[14px] text-ppc-primary/88 before:mr-2 before:text-ppc-accent before:content-['•']"
               >
                 {line}
               </li>
@@ -326,8 +326,8 @@ export default function QuitSmokingPage() {
         className="border-y border-ppc-border bg-ppc-mint"
       />
 
-      <section className="bg-ppc-bg px-5 py-14 md:py-20">
-        <div className="mx-auto max-w-[800px]">
+      <section className="site-section bg-ppc-bg">
+        <div className="site-prose">
           <h2 className="mb-8 font-display text-[32px] text-ppc-primary md:text-[40px]">
             ZONNIC FAQs
           </h2>
@@ -349,7 +349,7 @@ export default function QuitSmokingPage() {
                     </span>
                   </button>
                   {open ? (
-                    <p className="pb-5 text-[14px] leading-relaxed text-ppc-primary/65">
+                    <p className="pb-5 text-[14px] leading-relaxed text-ppc-primary/82">
                       {faq.a}
                     </p>
                   ) : null}

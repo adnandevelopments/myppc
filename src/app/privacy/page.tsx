@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — myPPC",
+  title: "Privacy Policy — medviCare",
 };
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         },
         {
           heading: "How we use information",
-          body: "Your information is used to assess treatment suitability, coordinate pharmacy fulfillment, provide support, and improve the myPPC experience.",
+          body: "Your information is used to assess treatment suitability, coordinate pharmacy fulfillment, provide support, and improve the medviCare experience.",
         },
         {
           heading: "Who can access clinical details",

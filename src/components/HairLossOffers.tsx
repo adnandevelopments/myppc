@@ -39,7 +39,7 @@ export default function HairLossOffers() {
 
       <div
         ref={scrollerRef}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-clip overscroll-x-contain px-1 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {offers.map((offer) => (
           <article
@@ -48,7 +48,7 @@ export default function HairLossOffers() {
             className="relative flex w-[min(86vw,320px)] shrink-0 snap-center flex-col rounded-2xl border border-ppc-border bg-ppc-surface p-5 pt-7 md:w-[300px]"
           >
             {"badge" in offer && offer.badge ? (
-              <span className="absolute left-4 top-0 -translate-y-1/2 rounded-md bg-ppc-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-white">
+              <span className="absolute left-4 top-0 -translate-y-1/2 rounded-full bg-ppc-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-white">
                 {offer.badge}
               </span>
             ) : null}
@@ -72,13 +72,13 @@ export default function HairLossOffers() {
               {offer.lines.map((line) => (
                 <p
                   key={line}
-                  className="text-[13px] leading-snug text-ppc-primary/70"
+                  className="text-[13px] leading-snug text-ppc-primary/88"
                 >
                   {line}
                 </p>
               ))}
               {"note" in offer && offer.note ? (
-                <p className="mt-1 text-[11px] text-ppc-primary/40">
+                <p className="mt-1 text-[11px] text-ppc-primary/70">
                   {offer.note}
                 </p>
               ) : null}

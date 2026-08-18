@@ -11,7 +11,7 @@ export default function ProductCardGrid({
 }) {
   return (
     <div
-      className={`grid gap-3 sm:grid-cols-2 ${
+      className={`grid gap-5 sm:grid-cols-2 ${
         columns === "dense"
           ? "lg:grid-cols-4"
           : "lg:grid-cols-3 xl:grid-cols-4"
@@ -21,7 +21,7 @@ export default function ProductCardGrid({
         <Link
           key={product.slug}
           href={product.href}
-          className="group relative overflow-hidden rounded-xl bg-ppc-surface ring-1 ring-ppc-border transition-all duration-300 hover:-translate-y-1 hover:ring-ppc-accent/40"
+          className="group relative overflow-hidden rounded-xl bg-ppc-surface ring-2 ring-ppc-accent/30 transition-all duration-300 hover:-translate-y-1 hover:ring-ppc-accent hover:shadow-[0_18px_40px_-18px_rgba(61,82,160,0.4)]"
         >
           <div className="relative aspect-[4/5] w-full">
             <Image

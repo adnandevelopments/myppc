@@ -1,15 +1,16 @@
-/** Local myPPC media — no third-party clinic branding assets. */
+/** Local medviCare media — no third-party clinic branding assets. */
 export const media = {
   logo: "/home/Homepage/Logo.svg",
   heroPeople: "/images/cta.jpg",
-  patients: "/images/patients.jpg",
+  patients: "/images/patients-care.png",
   blogBg: "/images/blog.jpg",
+  heroHome: "/images/hero2.png",
   heroSide: "/images/hero-care.jpg",
   pageHeroes: {
-    about: "/images/patients.jpg",
-    contact: "/images/cta.jpg",
-    faqs: "/images/wellness.jpg",
-    howItWorks: "/images/step2.jpg",
+    about: "/images/hero6.png",
+    contact: "/images/hero4.png",
+    faqs: "/images/faq-care.png",
+    howItWorks: "/images/process-step2.png",
     treatments: "/images/hero-care.jpg",
     medications: "/images/solution1.jpg",
     blog: "/images/blog.jpg",
@@ -29,13 +30,17 @@ export const media = {
     mental: "/images/hair.png",
     smoking: "/images/cutouts/habit.png",
   },
-  cutoutVersion: "16",
+  cutoutVersion: "17",
   steps: {
-    step1: "/images/step1.jpg",
-    step2: "/images/step2.jpg",
-    step3: "/images/step3.jpg",
+    step1: "/images/process-step1.png",
+    step2: "/images/process-step2.png",
+    step3: "/images/process-step3.png",
   },
-  solutions: ["/images/med3.png", "/images/med2.png", "/images/med1.png"],
+  solutions: [
+    "/images/why-online.png",
+    "/images/why-clinical.png",
+    "/images/why-providers.png",
+  ],
   team: [
     {
       name: "Dr. Aisha Rahman",
@@ -59,10 +64,10 @@ export const media = {
 };
 
 export const brand = {
-  name: "myPPC",
-  legal: "myPPC Health Inc.",
-  email: "hello@myppc.care",
-  press: "press@myppc.care",
+  name: "medviCare",
+  legal: "medviCare Health Inc.",
+  email: "hello@medvicare.care",
+  press: "press@medvicare.care",
   tagline: "Private care. Practical plans. Delivered.",
   address: "Service available across Canada",
 };
@@ -249,20 +254,20 @@ export const expertPoints = [
 
 export const faqs = [
   {
-    q: "What is myPPC?",
-    a: "myPPC is a digital health platform that connects you with licensed clinicians for conditions that deserve privacy and clear answers. From metabolic health to skin, hair, and mental wellness, we help you get a personalized plan and medication fulfillment without the usual clinic friction.",
+    q: "What is medviCare?",
+    a: "medviCare is a digital health platform that connects you with licensed clinicians for conditions that deserve privacy and clear answers. From metabolic health to skin, hair, and mental wellness, we help you get a personalized plan and medication fulfillment without the usual clinic friction.",
   },
   {
     q: "How does the process work?",
-    a: "Complete a focused intake about your goals and medical history. A clinician reviews your responses and decides whether a treatment path is appropriate. If approved, your plan is prepared and shipped through our partner pharmacy network, and you can follow up through the myPPC portal.",
+    a: "Complete a focused intake about your goals and medical history. A clinician reviews your responses and decides whether a treatment path is appropriate. If approved, your plan is prepared and shipped through our partner pharmacy network, and you can follow up through the medviCare portal.",
   },
   {
-    q: "Who provides care on myPPC?",
+    q: "Who provides care on medviCare?",
     a: "Your care is guided by physicians, nurse practitioners, and pharmacists. Support teams are available through secure messaging so questions about dosing, side effects, or shipping never sit unanswered.",
   },
   {
     q: "Is my information protected?",
-    a: "Yes. myPPC uses privacy controls aligned with applicable health data requirements. Clinical details are limited to the professionals managing your care, and our systems are built to keep personal information secure.",
+    a: "Yes. medviCare uses privacy controls aligned with applicable health data requirements. Clinical details are limited to the professionals managing your care, and our systems are built to keep personal information secure.",
   },
 ];
 
@@ -300,7 +305,7 @@ export const reviews = [
   },
   {
     title: "Fantastic team!",
-    body: "Quick responses in the portal and delivery showed up when expected. myPPC made the process feel easy from day one.",
+    body: "Quick responses in the portal and delivery showed up when expected. medviCare made the process feel easy from day one.",
     name: "Priya S.",
   },
   {
@@ -310,7 +315,7 @@ export const reviews = [
   },
   {
     title: "Discreet and straightforward",
-    body: "No awkward clinic visits — just a clear plan, solid guidance, and packaging that stayed private. Would recommend myPPC.",
+    body: "No awkward clinic visits — just a clear plan, solid guidance, and packaging that stayed private. Would recommend medviCare.",
     name: "Sam R.",
   },
   {
@@ -325,7 +330,7 @@ export const products: Product[] = [
   {
     slug: "cialis",
     name: "Cialis®",
-    image: "/images/med1.png",
+    image: "/images/meds/med-cialis.png",
     category: "sexual-health",
     blurb: "Longer-acting support for sexual health when clinically appropriate.",
     href: "/medications/cialis",
@@ -335,7 +340,7 @@ export const products: Product[] = [
   {
     slug: "viagra",
     name: "Viagra®",
-    image: "/images/med2.png",
+    image: "/images/meds/med-viagra.png",
     category: "sexual-health",
     blurb: "Trusted option reviewed by licensed clinicians.",
     href: "/medications/viagra",
@@ -345,7 +350,7 @@ export const products: Product[] = [
   {
     slug: "chewalis",
     name: "Chewalis",
-    image: "/images/med3.png",
+    image: "/images/meds/med-chewalis.png",
     category: "sexual-health",
     blurb: "Convenient chewable format for discreet daily life.",
     href: "/medications/chewalis",
@@ -355,7 +360,7 @@ export const products: Product[] = [
   {
     slug: "ozempic",
     name: "Ozempic®",
-    image: "/images/weight.png",
+    image: "/images/meds/med-ozempic.png",
     category: "weight-loss",
     blurb: "GLP-1 option as part of a supervised metabolic plan.",
     href: "/medications/ozempic",
@@ -365,7 +370,7 @@ export const products: Product[] = [
   {
     slug: "mounjaro",
     name: "Mounjaro®",
-    image: "/images/cutouts/weight.png",
+    image: "/images/meds/med-mounjaro.png",
     category: "weight-loss",
     blurb: "Clinician-guided dual-agonist pathway for eligible patients.",
     href: "/medications/mounjaro",
@@ -375,7 +380,7 @@ export const products: Product[] = [
   {
     slug: "anti-aging-cream",
     name: "Anti-aging Cream",
-    image: "/images/cutouts/skin.png",
+    image: "/images/meds/med-anti-aging.png",
     category: "skin",
     blurb: "Treat fine lines, uneven tone, and support collagen with a clinician-guided formula.",
     href: "/anti-aging-cream",
@@ -386,7 +391,7 @@ export const products: Product[] = [
   {
     slug: "acne-cream",
     name: "Acne Cream",
-    image: "/images/skin.jpg",
+    image: "/images/meds/med-acne.png",
     category: "skin",
     blurb: "Prescription-strength support for breakouts, texture, and clearer-looking skin.",
     href: "/acne-cream",
@@ -397,7 +402,7 @@ export const products: Product[] = [
   {
     slug: "hyperpigmentation-cream",
     name: "Hyperpigmentation Cream",
-    image: "/images/cutouts/skin.png",
+    image: "/images/meds/med-hyperpigmentation.png",
     category: "skin",
     blurb: "Target dark spots and uneven tone with a dermatologist-informed brightening plan.",
     href: "/hyperpigmentation-cream",
@@ -408,7 +413,7 @@ export const products: Product[] = [
   {
     slug: "hair-foam",
     name: "Finasteride & Minoxidil Foam",
-    image: "/images/loss.png",
+    image: "/images/meds/med-hair-foam.png",
     category: "hair-loss",
     blurb: "Targeted topical support for hair regrowth paths.",
     href: "/medications/hair-foam",
@@ -418,7 +423,7 @@ export const products: Product[] = [
   {
     slug: "zonnic",
     name: "ZONNIC Nicotine Pouches",
-    image: "/images/cutouts/habit.png",
+    image: "/images/meds/med-zonnic.png",
     category: "quit-smoking",
     blurb:
       "Health Canada–authorized nicotine pouches to help manage cravings while you quit.",
@@ -430,7 +435,7 @@ export const products: Product[] = [
   {
     slug: "semaglutide",
     name: "Semaglutide (Generic Ozempic)",
-    image: "/images/cutouts/wellness.png",
+    image: "/images/meds/med-semaglutide.png",
     category: "weight-loss",
     blurb: "Generic GLP-1 pathway when a clinician approves it.",
     href: "/medications/semaglutide",
@@ -444,6 +449,7 @@ export const meds = products.map((p) => ({
   name: p.name,
   href: p.href,
   blurb: p.blurb,
+  image: p.image,
 }));
 
 export function getProductsByCategories(categories: string[]) {
@@ -474,7 +480,7 @@ export const blogPosts = [
     title: "Why privacy matters in modern healthcare",
     category: "Health notes",
     excerpt:
-      "How myPPC approaches confidentiality from intake through packaging and billing.",
+      "How medviCare approaches confidentiality from intake through packaging and billing.",
   },
   {
     slug: "skin-basics",
@@ -593,7 +599,7 @@ export const bodyOptimization = {
       a: "GLP-1 medications mimic a natural hormone that helps regulate appetite and fullness, which can reduce food intake and support weight loss when clinically appropriate.",
     },
     {
-      q: "Which GLP-1s does myPPC offer?",
+      q: "Which GLP-1s does medviCare offer?",
       a: "Depending on eligibility, clinicians may consider options such as Ozempic®, Mounjaro®, and Semaglutide (generic pathways where available).",
     },
   ],
@@ -621,7 +627,7 @@ export const hairLoss = {
       id: "foam",
       title: "2-in-1 Foam",
       badge: "Most Popular",
-      image: "/images/loss.png",
+      image: "/images/meds/med-hair-foam.png",
       lines: ["Finasteride & Minoxidil combination foam"],
       note: "*Subject to patient consultation",
       supply: "2 Months Supply",
@@ -631,7 +637,7 @@ export const hairLoss = {
     {
       id: "tablet-topical",
       title: "Tablet & Topical solution",
-      image: "/images/med2.png",
+      image: "/images/meds/med-cialis.png",
       lines: [
         "Propecia (finasteride) Tablets*",
         "Minoxidil (Rogaine) Solution",
@@ -644,7 +650,7 @@ export const hairLoss = {
     {
       id: "topical",
       title: "Topical Solution",
-      image: "/images/med3.png",
+      image: "/images/meds/med-hair-foam.png",
       lines: ["Minoxidil (Rogaine)"],
       supply: "3 Months Supply",
       price: "$101.25",
@@ -654,7 +660,7 @@ export const hairLoss = {
     {
       id: "tablet",
       title: "Tablet Solution",
-      image: "/images/med1.png",
+      image: "/images/meds/med-cialis.png",
       lines: ["Finasteride (Propecia) Tablets*"],
       note: "*Subject to patient consultation",
       supply: "3 Months Supply",
@@ -762,7 +768,7 @@ export const aboutPillars = [
   {
     label: "Mission",
     title: "Breaking the stigma and redefining health for everyone.",
-    body: "At myPPC, we’re on a mission to normalize everyday health concerns and remove the friction that keeps too many people from seeking care. By creating a safe, accessible, and private platform, we help you take control of your health and start conversations that matter.",
+    body: "At medviCare, we’re on a mission to normalize everyday health concerns and remove the friction that keeps too many people from seeking care. By creating a safe, accessible, and private platform, we help you take control of your health and start conversations that matter.",
   },
   {
     label: "Goal",
@@ -772,17 +778,28 @@ export const aboutPillars = [
   {
     label: "Focus",
     title: "A dedicated team with you every step of the way.",
-    body: "Behind myPPC is a team of healthcare professionals covering medicine, pharmacy, and mental health. We work together to provide comprehensive solutions tailored to your needs — online, discreet, and practical.",
+    body: "Behind medviCare is a team of healthcare professionals covering medicine, pharmacy, and mental health. We work together to provide comprehensive solutions tailored to your needs — online, discreet, and practical.",
   },
 ];
 
-export const leadershipTeam = [
+export type Clinician = {
+  name: string;
+  credentials: string;
+  role: string;
+  image: string;
+  bio?: string;
+  badges?: string[];
+  href?: string;
+};
+
+export const leadershipTeam: Clinician[] = [
   {
     name: "Dr. Aisha Rahman",
     credentials: "MD, CCFP",
     role: "Chief Medical Officer",
     image: "/images/team1.jpg",
     href: "/about#leadership",
+    badges: ["CFPC", "U of T"],
   },
   {
     name: "Jordan Lee",
@@ -790,6 +807,7 @@ export const leadershipTeam = [
     role: "Chief Operating Officer",
     image: "/images/team2.jpg",
     href: "/about#leadership",
+    badges: ["RPh", "OCP"],
   },
   {
     name: "Dr. Sam Okonkwo",
@@ -797,71 +815,173 @@ export const leadershipTeam = [
     role: "Chief Clinical Advisor",
     image: "/images/team3.jpg",
     href: "/about#leadership",
+    badges: ["APA", "RCPSC"],
   },
 ];
 
-export const medicalAdvisory = [
+export const clinicians: Clinician[] = [
+  ...leadershipTeam,
   {
-    name: "Dr. Sam Okonkwo",
-    credentials: "MD, FAPA",
-    role: "Psychiatry Advisor",
-    bio: "Board-focused mental health clinician helping myPPC design private, stigma-free care pathways. Passionate about accessible virtual psychiatry support and clear patient education.",
+    name: "Dr. Priya Mehta",
+    credentials: "MD, FRCPC",
+    role: "Endocrinology Advisor",
+    image: "/images/team-priya.png",
+    badges: ["FRCPC"],
+  },
+  {
+    name: "Dr. Maya Chen",
+    credentials: "MD, CCFP",
+    role: "Family Medicine",
+    image: "/images/team-maya.png",
+    badges: ["CFPC"],
   },
   {
     name: "Nora Patel",
-    credentials: "Nurse Practitioner",
+    credentials: "NP",
     role: "Primary Care",
-    bio: "Experienced in community-based clinics and virtual platforms. Focused on improving healthcare accessibility through practical, technology-enabled primary care.",
+    image: "/images/team-nora.png",
   },
   {
     name: "Chris Adeyemi",
-    credentials: "Nurse Practitioner",
+    credentials: "NP",
     role: "Family Medicine",
-    bio: "Specializes in family medicine, health promotion, and occupational health. Dedicated to patient-centred care across ages with a personal, steady approach.",
-  },
-  {
-    name: "Morgan Blake",
-    credentials: "Nurse Practitioner",
-    role: "Primary Care",
-    bio: "Supports comprehensive primary care and wellness initiatives, with a strong interest in reducing barriers for patients who prefer discreet online options.",
-  },
-  {
-    name: "Elena Vargas",
-    credentials: "Nurse Practitioner",
-    role: "Metabolic Health",
-    bio: "Experienced in primary care with a focus on medical weight management. Combines clinical guidance with lifestyle support for sustainable habits.",
-  },
-];
-
-export const pharmacyAdvisory = [
-  {
-    name: "Jordan Lee",
-    credentials: "RPh, PharmD",
-    role: "Pharmacy Lead",
-    bio: "Licensed pharmacist with experience across community pharmacy and healthcare operations. Focused on safe fulfillment, clear counseling, and practical patient support.",
+    image: "/images/team-chris.png",
   },
   {
     name: "Amira Hassan",
     credentials: "RPh, PharmD",
     role: "Clinical Pharmacy",
-    bio: "Hospital and community pharmacy background with a strong interest in patient education and research-informed medication guidance.",
+    image: "/images/team-amira.png",
+    badges: ["OCP"],
+  },
+  {
+    name: "Dr. Omar Farid",
+    credentials: "MD, CCFP",
+    role: "Metabolic Health",
+    image: "/images/team-omar.png",
+  },
+  {
+    name: "Elena Vargas",
+    credentials: "NP",
+    role: "Weight Management",
+    image: "/images/team-elena.png",
+  },
+];
+
+export const medicalAdvisory: Clinician[] = [
+  {
+    name: "Dr. Sam Okonkwo",
+    credentials: "MD, FAPA",
+    role: "Psychiatry Advisor",
+    image: "/images/team3.jpg",
+    bio: "Board-focused mental health clinician helping medviCare design private, stigma-free care pathways.",
+  },
+  {
+    name: "Nora Patel",
+    credentials: "Nurse Practitioner",
+    role: "Primary Care",
+    image: "/images/team-nora.png",
+    bio: "Experienced in community clinics and virtual platforms. Focused on making primary care easier to reach.",
+  },
+  {
+    name: "Chris Adeyemi",
+    credentials: "Nurse Practitioner",
+    role: "Family Medicine",
+    image: "/images/team-chris.png",
+    bio: "Specializes in family medicine and health promotion, with a steady, personal approach across ages.",
+  },
+  {
+    name: "Morgan Blake",
+    credentials: "Nurse Practitioner",
+    role: "Primary Care",
+    image: "/images/team-morgan.png",
+    bio: "Supports comprehensive primary care and wellness, with a focus on discreet online options.",
+  },
+  {
+    name: "Elena Vargas",
+    credentials: "Nurse Practitioner",
+    role: "Metabolic Health",
+    image: "/images/team-elena.png",
+    bio: "Guides medical weight management with clinical plans and practical lifestyle support.",
+  },
+  {
+    name: "Dr. Priya Mehta",
+    credentials: "MD, FRCPC",
+    role: "Endocrinology",
+    image: "/images/team-priya.png",
+    bio: "Advises on metabolic and hormone-related care pathways reviewed by licensed clinicians.",
+  },
+  {
+    name: "Dr. Maya Chen",
+    credentials: "MD, CCFP",
+    role: "Family Medicine",
+    image: "/images/team-maya.png",
+    bio: "Helps shape intake and follow-up so patients get clear next steps without clinic friction.",
+  },
+  {
+    name: "Dr. James Okoye",
+    credentials: "MD, CCFP",
+    role: "Internal Medicine",
+    image: "/images/team5.png",
+    bio: "Supports clinical review standards so every plan stays appropriate and easy to follow.",
+  },
+];
+
+export const pharmacyAdvisory: Clinician[] = [
+  {
+    name: "Jordan Lee",
+    credentials: "RPh, PharmD",
+    role: "Pharmacy Lead",
+    image: "/images/team2.jpg",
+    bio: "Licensed pharmacist focused on safe fulfillment, clear counseling, and practical patient support.",
+  },
+  {
+    name: "Amira Hassan",
+    credentials: "RPh, PharmD",
+    role: "Clinical Pharmacy",
+    image: "/images/team-amira.png",
+    bio: "Hospital and community pharmacy background with a focus on research-informed medication guidance.",
   },
   {
     name: "Daniel Cho",
     credentials: "RPh, PharmD",
     role: "Retail Pharmacy",
-    bio: "Passionate about mental health and accessible pharmacy care. Brings retail and startup experience to improve everyday patient workflows.",
+    image: "/images/team-daniel.png",
+    bio: "Brings retail and startup experience to keep everyday pharmacy workflows simple and reliable.",
   },
   {
     name: "Riley Quinn",
     credentials: "Fulfilment Coordinator",
     role: "Operations",
-    bio: "Keeps telehealth fulfillment organized and reliable — from order readiness to discreet shipping coordination.",
+    image: "/images/team-riley.png",
+    bio: "Keeps telehealth fulfillment organized — from order readiness to discreet shipping.",
   },
   {
     name: "Samira Noor",
-    credentials: "Logistics & Marketing",
+    credentials: "Logistics Lead",
     role: "Growth Ops",
-    bio: "Connects clear patient messaging with smooth logistics so care stays easy to understand and easy to receive.",
+    image: "/images/team-samira.png",
+    bio: "Connects clear patient messaging with smooth logistics so care is easy to receive.",
+  },
+  {
+    name: "Omar Farid",
+    credentials: "RPh, PharmD",
+    role: "Dispensing Advisor",
+    image: "/images/team-omar.png",
+    bio: "Reviews dispensing quality and packaging standards for private, on-time delivery.",
+  },
+  {
+    name: "Leah Brooks",
+    credentials: "RPh",
+    role: "Patient Counseling",
+    image: "/images/team-leah.png",
+    bio: "Helps patients understand dosing, timing, and what to do if a question comes up.",
+  },
+  {
+    name: "Priya Shah",
+    credentials: "RPh, PharmD",
+    role: "Clinical Safety",
+    image: "/images/team6.png",
+    bio: "Focuses on interaction checks and clear instructions before a plan ships.",
   },
 ];

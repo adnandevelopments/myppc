@@ -35,8 +35,8 @@ export default function VisualCards({
   className?: string;
 }) {
   return (
-    <section className={`px-5 py-14 md:py-20 ${className}`}>
-      <div className="mx-auto max-w-[1180px]">
+    <section className={`site-section ${className}`}>
+      <div className="site-inner">
         {eyebrow ? (
           <Reveal variant="blur-up">
             <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent">
@@ -51,13 +51,13 @@ export default function VisualCards({
         </Reveal>
         {description ? (
           <Reveal delay={100}>
-            <p className="mt-3 max-w-2xl text-[15px] text-ppc-primary/60">
+            <p className="mt-3 max-w-2xl text-[15px] text-ppc-primary/80">
               {description}
             </p>
           </Reveal>
         ) : null}
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-3 md:gap-6">
           {items.map((item, i) => {
             const photo =
               item.image ?? defaultPhotos[i % defaultPhotos.length];

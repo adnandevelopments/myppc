@@ -9,11 +9,11 @@ const partners = [
 
 export default function ProudPartner() {
   return (
-    <section className="border-y border-ppc-border bg-ppc-mint px-5 py-10 md:py-12">
-      <div className="mx-auto flex max-w-[1180px] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+    <section className="border-y border-ppc-border bg-ppc-surface py-10 md:py-12">
+      <div className="site-inner flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <div className="flex items-center gap-3">
           <BrandLogo />
-          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ppc-primary/45">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ppc-primary/72">
             Network partners
           </span>
         </div>

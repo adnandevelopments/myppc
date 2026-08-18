@@ -7,74 +7,98 @@ import { motion } from "@/components/Motion";
 
 export default function HeroTreatments() {
   return (
-    <section className="relative min-h-[calc(100svh-64px)] overflow-hidden bg-ppc-dark">
+    <section className="relative -mt-[72px] min-h-svh overflow-clip bg-ppc-dark">
       <Image
-        src={media.heroSide}
-        alt=""
+        src={media.heroHome}
+        alt="medviCare — private online care"
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-[78%_center] md:object-[70%_center]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ppc-dark/85 via-ppc-dark/50 to-ppc-dark/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ppc-dark/70 via-transparent to-ppc-dark/25" />
-      <div className="absolute inset-0 grain opacity-25 mix-blend-overlay" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/25" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-64px)] max-w-[1180px] flex-col justify-end px-5 pb-14 pt-24 md:justify-center md:pb-20 md:pt-16">
-        <div className="max-w-[640px]">
+      <div className="site-inner relative flex min-h-svh flex-col justify-center pb-16 pt-28 md:pb-20">
+        <div className="max-w-[620px]">
           <motion.div
-            initial={{ opacity: 0, y: 36 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ duration: 0.7, delay: 0.05 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55 }}
+            className="mb-5 flex items-center gap-3"
           >
-            <p className="mb-5 font-display text-[42px] font-semibold leading-none tracking-tight text-white md:text-[64px]">
-              <span className="text-white">my</span>
-              <span className="text-ppc-accent-soft">PPC</span>
+            <span className="h-px w-8 bg-ppc-accent-soft" />
+            <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white">
+              {brand.name}
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 36 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-          >
-            <h1 className="font-display text-[32px] font-[400] leading-[1.08] tracking-[-0.02em] text-white md:text-[48px]">
-              {brand.tagline}
-            </h1>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.65, delay: 0.08 }}
           >
-            <p className="mt-4 max-w-[440px] text-[16px] leading-relaxed text-white/75 md:text-[18px]">
+            <h1 className="font-display text-[40px] font-semibold leading-[1.05] tracking-[-0.03em] text-white md:text-[64px] lg:text-[72px]">
+              Private care.
+              <br />
+              Practical plans.
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+          >
+            <p className="mt-5 max-w-[480px] text-[16px] leading-relaxed text-white md:text-[18px]">
               Licensed clinicians, personalized plans, and discreet delivery —
               without the waiting room.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ duration: 0.65, delay: 0.35 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+            className="mt-7 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2"
+          >
+            {[
+              "Personalized treatment plans",
+              "Unlimited medical support",
+              "100% online & discreet",
+            ].map((item) => (
+              <p
+                key={item}
+                className="flex items-center gap-2 text-[13px] font-medium text-white/90 md:text-[14px]"
+              >
+                <span
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ppc-accent text-[10px] text-white"
+                  aria-hidden
+                >
+                  ✓
+                </span>
+                {item}
+              </p>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55, delay: 0.28 }}
+            className="mt-8"
           >
             <Link
               href="/treatments"
-              className="motion-press inline-flex items-center justify-center rounded-md bg-ppc-accent px-6 py-3.5 text-[15px] font-medium text-white hover:bg-ppc-accent-soft"
+              className="motion-press inline-flex items-center gap-2 rounded-full bg-ppc-accent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-white hover:bg-ppc-dark"
             >
-              Explore care paths
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="motion-press inline-flex items-center justify-center rounded-md border border-white/25 bg-white/5 px-6 py-3.5 text-[15px] font-medium text-white backdrop-blur-sm hover:bg-white/10"
-            >
-              See how it works
+              Explore care
+              <span aria-hidden>→</span>
             </Link>
           </motion.div>
         </div>

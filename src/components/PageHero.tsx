@@ -14,6 +14,8 @@ type PageHeroProps = {
   /** Optional product/treatment cutout on the right */
   sideImage?: string;
   sideImageAlt?: string;
+  /** Homepage-style hero under a transparent header */
+  underHeader?: boolean;
 };
 
 export default function PageHero({
@@ -25,25 +27,29 @@ export default function PageHero({
   image = media.heroSide,
   sideImage,
   sideImageAlt = "",
+  underHeader = false,
 }: PageHeroProps) {
   return (
-    <FullBleedHero image={image}>
+    <FullBleedHero image={image} underHeader={underHeader}>
       <div
         className={`grid items-center gap-10 ${
           sideImage ? "lg:grid-cols-[1.15fr_0.85fr]" : ""
         }`}
       >
-        <div className="max-w-3xl">
+        <div className="max-w-[620px]">
           {eyebrow ? (
-            <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ppc-accent-soft">
-              {eyebrow}
-            </p>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-8 bg-ppc-accent-soft" />
+              <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white">
+                {eyebrow}
+              </p>
+            </div>
           ) : null}
-          <h1 className="font-display text-[36px] font-[400] leading-[1.08] tracking-[-0.02em] drop-shadow-sm md:text-[52px]">
+          <h1 className="font-display text-[36px] font-semibold leading-[1.08] tracking-[-0.02em] text-white md:text-[52px]">
             {title}
           </h1>
           {description ? (
-            <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-white/80 md:text-[18px]">
+            <p className="mt-5 max-w-[480px] text-[16px] leading-relaxed text-white md:text-[18px]">
               {description}
             </p>
           ) : null}
@@ -52,15 +58,16 @@ export default function PageHero({
               {cta ? (
                 <Link
                   href={cta.href}
-                  className="inline-flex rounded-md bg-ppc-accent px-5 py-3 text-[14px] font-medium text-white transition-colors hover:bg-ppc-accent-soft"
+                  className="motion-press inline-flex items-center gap-2 rounded-full bg-ppc-accent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-white hover:bg-ppc-dark"
                 >
                   {cta.label}
+                  <span aria-hidden>→</span>
                 </Link>
               ) : null}
               {secondaryCta ? (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex rounded-md border border-white/25 bg-white/10 px-5 py-3 text-[14px] font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/15"
+                  className="motion-press inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm hover:bg-white/20"
                 >
                   {secondaryCta.label}
                 </Link>

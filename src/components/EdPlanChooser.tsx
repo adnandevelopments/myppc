@@ -34,10 +34,10 @@ function Segmented({
             key={opt.id}
             type="button"
             onClick={() => onChange(opt.id)}
-            className={`rounded-lg px-2 py-2.5 text-[11px] font-semibold uppercase tracking-[0.04em] transition sm:text-[12px] ${
+            className={`rounded-full px-2 py-2.5 text-[11px] font-semibold uppercase tracking-[0.04em] transition sm:text-[12px] ${
               active
                 ? "border border-ppc-accent/50 bg-background text-ppc-primary shadow-sm"
-                : "border border-transparent bg-ppc-mint text-ppc-primary/45 hover:text-ppc-primary/70"
+                : "border border-transparent bg-ppc-mint text-ppc-primary/72 hover:text-ppc-primary/88"
             }`}
           >
             {opt.label}
@@ -82,7 +82,7 @@ function PlanCard({ plan }: { plan: EdPlan }) {
           unoptimized
         />
       </div>
-      <p className="mt-2 text-center text-[12px] text-ppc-primary/55">
+      <p className="mt-2 text-center text-[12px] text-ppc-primary/78">
         {plan.dosages}
       </p>
 
@@ -90,7 +90,7 @@ function PlanCard({ plan }: { plan: EdPlan }) {
         <p className="mb-1 text-[12px] font-medium text-ppc-primary/80">
           Select preference
         </p>
-        <p className="mb-2 text-[11px] leading-snug text-ppc-primary/45">
+        <p className="mb-2 text-[11px] leading-snug text-ppc-primary/72">
           Generic is as effective as Brand, but costs less.
         </p>
         <Segmented
@@ -145,7 +145,7 @@ function PlanCard({ plan }: { plan: EdPlan }) {
       >
         Select — ${price}
       </button>
-      <p className="mt-3 text-center text-[11px] text-ppc-primary/40">
+      <p className="mt-3 text-center text-[11px] text-ppc-primary/70">
         Dose request can be made during questionnaire
       </p>
     </article>
@@ -185,7 +185,7 @@ export default function EdPlanChooser() {
 
       <div
         ref={scrollerRef}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-clip overscroll-x-contain px-1 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {plans.map((plan) => (
           <PlanCard key={plan.id} plan={plan} />

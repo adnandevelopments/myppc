@@ -1,6 +1,6 @@
-<svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="4" width="24" height="24" rx="6" fill="#1FA97A"/>
+<svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="4" width="24" height="24" rx="6" fill="#3D52A0"/>
   <path d="M7 20V12h2.1l2.05 5.1L13.2 12H15.3v8h-1.7v-4.55L11.65 20h-1.2L8.55 15.45V20H7z" fill="white"/>
-  <text x="32" y="22" fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0.5">my</text>
-  <text x="56" y="22" fill="#1FA97A" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0.5">PPC</text>
+  <text x="32" y="22" fill="#3D52A0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0.5">medvi</text>
+  <text x="82" y="22" fill="#7091E6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0.5">Care</text>
 </svg>

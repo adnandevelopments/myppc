@@ -19,9 +19,9 @@ export default function SplitMedia({
   className?: string;
 }) {
   return (
-    <section className={`px-5 py-14 md:py-20 ${className}`}>
+    <section className={`site-section ${className}`}>
       <div
-        className={`mx-auto grid max-w-[1180px] items-center gap-10 lg:grid-cols-2 lg:gap-14 ${
+        className={`site-inner grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >

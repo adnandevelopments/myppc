@@ -278,7 +278,7 @@ export default function HairLossQuiz({
           <button
             type="button"
             onClick={goBack}
-            className="absolute left-0 inline-flex h-10 w-10 items-center justify-center text-ppc-primary/70 hover:text-ppc-accent"
+            className="absolute left-0 inline-flex h-10 w-10 items-center justify-center text-ppc-primary/88 hover:text-ppc-accent"
             aria-label="Back"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -292,13 +292,13 @@ export default function HairLossQuiz({
             </svg>
           </button>
           <p className="font-display text-[26px] font-semibold tracking-tight">
-            <span className="text-ppc-primary">my</span>
-            <span className="text-ppc-accent">PPC</span>
+            <span className="text-ppc-primary">medvi</span>
+            <span className="text-ppc-accent-soft">Care</span>
           </p>
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-0 text-[13px] font-medium text-ppc-primary/45 hover:text-ppc-primary"
+            className="absolute right-0 text-[13px] font-medium text-ppc-primary/72 hover:text-ppc-primary"
           >
             Close
           </button>
@@ -349,7 +349,7 @@ export default function HairLossQuiz({
               {step.question}
             </h1>
             <label className="block">
-              <span className="mb-2 block text-[14px] font-medium text-ppc-primary/70">
+              <span className="mb-2 block text-[14px] font-medium text-ppc-primary/88">
                 My birthday is
               </span>
               <div className="relative">
@@ -361,9 +361,9 @@ export default function HairLossQuiz({
                     setBirthday(e.target.value);
                     setBirthdayError("");
                   }}
-                  className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 pr-12 text-[16px] text-ppc-primary outline-none focus:border-ppc-accent [color-scheme:dark]"
+                  className="w-full rounded-xl border border-ppc-border bg-ppc-surface px-4 py-4 pr-12 text-[16px] text-ppc-primary outline-none transition-colors hover:border-ppc-accent focus:border-ppc-accent [color-scheme:light]"
                 />
-                <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-ppc-primary/35">
+                <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-ppc-primary/70">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <rect
                       x="3"
@@ -389,7 +389,7 @@ export default function HairLossQuiz({
                 {birthdayError}
               </p>
             ) : (
-              <p className="mt-3 text-[12px] text-ppc-primary/40">
+              <p className="mt-3 text-[12px] text-ppc-primary/70">
                 You must be 18 years old or above to continue.
               </p>
             )}
@@ -411,7 +411,7 @@ export default function HairLossQuiz({
             <h1 className="font-display text-[28px] font-[400] leading-tight text-ppc-primary md:text-[32px]">
               Sorry — we recommend treatment for men only
             </h1>
-            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/65">
+            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/82">
               This hair-loss pathway is currently designed for male pattern hair
               loss. We’re not able to recommend this treatment for female
               patients through this quiz.
@@ -443,7 +443,7 @@ export default function HairLossQuiz({
             <h1 className="font-display text-[28px] font-[400] leading-tight text-ppc-primary md:text-[32px]">
               We suggest {medicine.title}
             </h1>
-            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/65">
+            <p className="mt-3 text-[15px] leading-relaxed text-ppc-primary/82">
               Based on your quiz answers, this option is a strong starting match.
               A licensed clinician still reviews eligibility before anything is
               prescribed.
@@ -465,7 +465,7 @@ export default function HairLossQuiz({
                   {medicine.title}
                 </p>
                 {medicine.lines.map((line) => (
-                  <p key={line} className="mt-1 text-[13px] text-ppc-primary/60">
+                  <p key={line} className="mt-1 text-[13px] text-ppc-primary/80">
                     {line}
                   </p>
                 ))}
@@ -506,7 +506,7 @@ export default function HairLossQuiz({
         ) : null}
 
         <div className="mt-auto pt-10">
-          <p className="text-center text-[11px] leading-relaxed text-ppc-primary/40">
+          <p className="text-center text-[11px] leading-relaxed text-ppc-primary/70">
             We respect your privacy. All of your information is securely stored
             on our PIPEDA Compliant server.
           </p>

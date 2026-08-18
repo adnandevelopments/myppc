@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LongevityPage from "@/components/LongevityPage";
 
 export const metadata: Metadata = {
-  title: "Longevity Program — Live Longer — myPPC",
+  title: "Longevity Program — Live Longer — medviCare",
   description:
     "Test 38+ biomarkers, reveal your biological age, and get a personalized longevity action plan with clinician support.",
 };
