@@ -135,18 +135,18 @@ export default function AboutContent() {
                 <button
                   type="button"
                   onClick={() => setSelected(member)}
-                  className="motion-card group w-full overflow-hidden rounded-2xl border border-ppc-border bg-white text-left"
+                  className="motion-card group flex w-full flex-col overflow-hidden rounded-2xl border border-ppc-border bg-white p-0 text-left leading-none appearance-none"
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="origin-top object-cover object-top scale-[1.12] transition-transform duration-700 group-hover:scale-[1.2]"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 leading-normal">
                     <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-ppc-accent">
                       {member.role}
                     </p>
