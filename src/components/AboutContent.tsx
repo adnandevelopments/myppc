@@ -142,7 +142,7 @@ export default function AboutContent() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="origin-top object-cover object-top scale-[1.12] transition-transform duration-700 group-hover:scale-[1.2]"
                       sizes="(max-width: 1024px) 50vw, 33vw"
                     />
                   </div>

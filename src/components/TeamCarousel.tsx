@@ -61,7 +61,7 @@ export default function TeamCarousel({
 
       <div
         ref={scrollerRef}
-        className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto pb-1 pt-1"
+        className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto pb-1"
       >
         {people.map((person) => (
           <button
@@ -76,7 +76,7 @@ export default function TeamCarousel({
                 src={person.image}
                 alt={person.name}
                 fill
-                className="object-cover object-[center_12%] transition-transform duration-700 group-hover:scale-105"
+                className="origin-top object-cover object-top scale-[1.2] transition-transform duration-700 group-hover:scale-[1.28]"
                 sizes="280px"
               />
             </div>

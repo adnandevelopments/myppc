@@ -36,7 +36,10 @@ export default function TreatmentsPage() {
                     item.slug === "mental-health" ||
                     item.slug === "weight-loss" ||
                     item.slug === "quit-smoking" ||
-                    item.slug === "skin"
+                    item.slug === "skin" ||
+                    item.slug === "longevity" ||
+                    item.slug === "sexual-health" ||
+                    item.slug === "hair-loss"
                       ? "object-contain object-center p-2"
                       : "object-cover object-[center_20%]"
                   }
