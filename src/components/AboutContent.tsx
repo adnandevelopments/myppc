@@ -52,9 +52,9 @@ function AdvisoryBand({
 
 export default function AboutContent() {
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
-  const [selected, setSelected] = useState<(typeof leadershipTeam)[number] | null>(
-    null,
-  );
+  const [selected, setSelected] = useState<
+    (typeof leadershipTeam)[number] | null
+  >(null);
 
   return (
     <>

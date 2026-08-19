@@ -32,7 +32,14 @@ export default function TreatmentsPage() {
                   src={`${item.image}?v=${media.cutoutVersion}`}
                   alt={`${item.title} ${item.accent}`}
                   fill
-                  className="object-cover object-[center_20%]"
+                  className={
+                    item.slug === "mental-health" ||
+                    item.slug === "weight-loss" ||
+                    item.slug === "quit-smoking" ||
+                    item.slug === "skin"
+                      ? "object-contain object-center p-2"
+                      : "object-cover object-[center_20%]"
+                  }
                   sizes="(max-width: 768px) 140px, 180px"
                   unoptimized
                 />

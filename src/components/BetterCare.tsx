@@ -76,34 +76,37 @@ export default function BetterCare() {
               >
                 <Link
                   href={item.href}
-                  className="motion-card group flex h-full min-h-[300px] flex-col overflow-hidden rounded-2xl border-2 border-ppc-accent/40 bg-ppc-surface transition-all hover:-translate-y-1 hover:border-ppc-accent hover:shadow-[0_18px_40px_-18px_rgba(61,82,160,0.45)]"
+                  className="motion-card group flex h-full min-h-[360px] flex-col overflow-hidden rounded-2xl border-2 border-ppc-accent/40 bg-ppc-surface transition-all hover:-translate-y-1 hover:border-ppc-accent hover:bg-ppc-accent hover:shadow-[0_18px_40px_-18px_rgba(61,82,160,0.55)]"
                 >
-                  <div className="relative h-[200px] shrink-0 overflow-hidden bg-ppc-mint">
+                  <div className="px-5 pb-3 pt-5">
+                    <h3 className="font-helvetica-display text-[20px] font-medium leading-tight tracking-[-0.02em] text-ppc-primary transition-colors group-hover:text-white md:text-[22px]">
+                      {item.title}{" "}
+                      <span className="text-ppc-accent transition-colors group-hover:text-white">
+                        {item.accent}
+                      </span>
+                    </h3>
+                  </div>
+                  <div className="relative min-h-[240px] flex-1 overflow-hidden bg-white">
                     <Image
                       src={`${item.image}?v=${media.cutoutVersion}`}
                       alt={`${item.title} ${item.accent}`}
                       fill
-                      className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                      className={
+                        item.slug === "mental-health" ||
+                        item.slug === "weight-loss" ||
+                        item.slug === "quit-smoking" ||
+                        item.slug === "skin"
+                          ? "object-contain object-center p-3 transition-transform duration-700 group-hover:scale-105"
+                          : "object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                      }
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       unoptimized
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ppc-surface/70 via-transparent to-transparent" />
                   </div>
-
-                  <div className="flex flex-1 flex-col p-5 md:p-6">
-                    <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ppc-accent/90">
-                      Care path
-                    </p>
-                    <h3 className="font-helvetica-display text-[20px] font-medium leading-tight tracking-[-0.02em] text-ppc-primary md:text-[22px]">
-                      {item.title}{" "}
-                      <span className="text-ppc-accent">{item.accent}</span>
-                    </h3>
-                    <p className="mt-2 flex-1 text-[13px] leading-relaxed text-ppc-primary/78 line-clamp-3 md:text-[14px]">
-                      {item.summary}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-2 border-t border-ppc-accent/25 pt-4 text-[13px] font-medium text-ppc-accent">
+                  <div className="px-5 py-4">
+                    <span className="inline-flex items-center gap-2 text-[13px] font-medium text-ppc-accent transition-colors group-hover:text-white">
                       <span className="transition-all duration-300 group-hover:translate-x-0.5">
-                        Explore
+                        Learn more
                       </span>
                       <span
                         aria-hidden
