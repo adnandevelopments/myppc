@@ -254,20 +254,20 @@ export const expertPoints = [
 
 export const faqs = [
   {
-    q: "What is medviCare?",
-    a: "medviCare is a digital health platform that connects you with licensed clinicians for conditions that deserve privacy and clear answers. From metabolic health to skin, hair, and mental wellness, we help you get a personalized plan and medication fulfillment without the usual clinic friction.",
+    q: "What does medviCare offer?",
+    a: "medviCare is a Canadian digital clinic. You complete a private intake, a licensed clinician reviews it, and — if treatment is appropriate — a personalized plan can be fulfilled through partner pharmacies and delivered discreetly. Paths include metabolic health, hair, skin, sexual health, mental health, and habit support.",
   },
   {
-    q: "How does the process work?",
-    a: "Complete a focused intake about your goals and medical history. A clinician reviews your responses and decides whether a treatment path is appropriate. If approved, your plan is prepared and shipped through our partner pharmacy network, and you can follow up through the medviCare portal.",
+    q: "What happens after I start?",
+    a: "You answer focused questions about your goals, history, and current medications. A clinician decides whether a treatment path is suitable. If it is, the plan is prepared, shipped, and you can follow up in the portal instead of booking another in-person visit.",
   },
   {
-    q: "Who provides care on medviCare?",
-    a: "Your care is guided by physicians, nurse practitioners, and pharmacists. Support teams are available through secure messaging so questions about dosing, side effects, or shipping never sit unanswered.",
+    q: "Who is on the care team?",
+    a: "Physicians, nurse practitioners, and pharmacists guide treatment and fulfillment. Support staff help with portal messages, delivery questions, and refills so clinical details stay with the people responsible for your plan.",
   },
   {
-    q: "Is my information protected?",
-    a: "Yes. medviCare uses privacy controls aligned with applicable health data requirements. Clinical details are limited to the professionals managing your care, and our systems are built to keep personal information secure.",
+    q: "How is my information kept private?",
+    a: "Personal and medical details are limited to the professionals managing your care. Systems are set up to meet applicable privacy expectations, and packaging and billing are designed to stay discreet wherever possible.",
   },
 ];
 
@@ -767,18 +767,18 @@ export const hairLoss = {
 export const aboutPillars = [
   {
     label: "Mission",
-    title: "Breaking the stigma and redefining health for everyone.",
-    body: "At medviCare, we’re on a mission to normalize everyday health concerns and remove the friction that keeps too many people from seeking care. By creating a safe, accessible, and private platform, we help you take control of your health and start conversations that matter.",
+    title: "Make private care as easy to start as it is to need.",
+    body: "Too many people wait on hair, weight, mood, or sexual health because the usual clinic path feels public and slow. medviCare is a licensed, online way to ask for help, get a clear plan, and keep follow-up in a space that stays yours.",
   },
   {
     label: "Goal",
-    title: "A patient-centred approach where you come first.",
-    body: "Our goal is simple: put patients at the centre of everything we do. From first consultation to ongoing support, we focus on building trust, delivering personalized care, and making sure every patient feels heard.",
+    title: "Build every visit around the person, not the queue.",
+    body: "We measure success by whether you feel understood and know what happens next. Intake, clinician review, and ongoing support are designed as one path — personal, practical, and easy to continue after day one.",
   },
   {
     label: "Focus",
-    title: "A dedicated team with you every step of the way.",
-    body: "Behind medviCare is a team of healthcare professionals covering medicine, pharmacy, and mental health. We work together to provide comprehensive solutions tailored to your needs — online, discreet, and practical.",
+    title: "Keep medicine, pharmacy, and support on the same team.",
+    body: "Physicians, nurse practitioners, and pharmacists work together so your plan is reviewed, dispensed, and explained in one place. That mix of clinical, pharmacy, and mental-health expertise is how we keep care complete without sending you elsewhere.",
   },
 ];
 

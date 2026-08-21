@@ -6,7 +6,7 @@ import { media } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About Us — medviCare",
   description:
-    "Learn about medviCare’s mission, leadership, medical advisors, and patient-centred approach to private online care.",
+    "Who we are, how licensed clinicians review care online, and the leadership and advisory teams behind medviCare.",
 };
 
 export default function AboutPage() {
@@ -15,10 +15,11 @@ export default function AboutPage() {
       <PageHero
         underHeader
         eyebrow="About Us"
-        title="Care without the stigma"
-        description="We’re building a safer, clearer way to get clinician-guided care for the health topics people often avoid talking about."
+        title="A quieter clinic, built for real life"
+        description="Licensed clinicians, private plans, and discreet delivery — so the health topics people delay still get a proper, professional path."
         image={media.pageHeroes.about}
         cta={{ label: "Contact Us", href: "/contact" }}
+        secondaryCta={{ label: "Meet the team", href: "#leadership" }}
       />
       <AboutContent />
     </>
